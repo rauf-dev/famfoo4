@@ -11,27 +11,27 @@
 <!-- BREADCRUMB -->
 <nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Library</li>
+      <li class="breadcrumb-item"><a href="/">home</a></li>
+      <li class="breadcrumb-item"><a href="/meals/category/<%= meal.mealCategory %>"><%= meal.mealCategory %> </a></li>
+      <li class="breadcrumb-item active" aria-current="page">meal details</li>
     </ol>
   </nav>
 
         <!-- HERO -->
         <section class="section-template section-template__fullHeightSection text-center">
-            <h2 class="mb-4">Meal Details</h2>
             <div class="mb-4 text-center sectionDivTemplate-singleImageDiv">
-                <img src="/assets/demo/chad-montano-eeqbbemH9-c-unsplash.jpg"
+                <img src="<%= `${meal.imageLocation}` %> "
                         class="sectionDivTemplate-singleImage rounded img-fluid" alt="...">
             </div>
 
             <div class="mb-4">
-                <h4>Classic American Style Pancakes</h4>
-                <p class="small text-muted">Breakfast</p>
-                <p>Fluffy and delicious with maple syrup</p>
+                <h4><%= meal.mealName %> </h4>
+                <p> <%= meal.mealDescription %>  </p>
+                <p class="small text-muted"> <%= meal.mealCategory %>  </p>
             </div>
             <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
-                <a href="#" class="btn btn-primary btn-lg px-4 me-md-2">Edit Meal</button></a>
-                <a href="#" class="btn btn-primary btn-sm px-4 me-md-2">Delete Meal</button></a>
+                <a href="/meals/edit/<%= meal.id %> " class="btn btn-primary btn-sm px-4 me-md-2">Edit Meal</button></a>
+                <a href="#" class="btn btn-outline-danger btn-sm px-4 me-md-2">Delete Meal</button></a>
             </div>
         </section>
 

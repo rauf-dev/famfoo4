@@ -76,13 +76,7 @@ body {
   object-fit: cover;
 }
 
-/* SUGGESTION PAGE */
-/* .suggestionPage-suggestionImageDiv {
-  max-height: 500px;
-  width: 100%;
+/* EDIT MEAL PAGE */
+.section-editmeal-hiddenform{
+  /* display: none; */
 }
-.suggestionPage-suggestionImage {
-  max-height: 500px;
-  background: rgb(255, 255, 255);  
-} */
-
