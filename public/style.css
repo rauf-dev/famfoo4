@@ -13,21 +13,22 @@ body {
 }
 
 .section-homePageHero {
-  border: 3px solid rgba(80, 79, 90, 0.5);
+  /* border: 3px solid rgba(80, 79, 90, 0.5); */
   border-radius: 15px;
   background-color: white;
   box-shadow: 14px 17px 13px -11px rgba(68, 68, 68, 0.37);
   -webkit-box-shadow: 14px 17px 13px -11px rgba(68, 68, 68, 0.37);
-  opacity: 0.9;
+  /* opacity: 0.9; */
+  
 }
 
 /* Used on: practically all sections */
 .section-template {
   /* background-color: white; */
-  border: 1px solid rgba(80, 79, 90, 0.5);
+  /* border: 1px solid rgba(80, 79, 90, 0.5); */
   border-radius: 15px;
-  box-shadow: 14px 17px 13px -11px rgba(68, 68, 68, 0.37);
-  -webkit-box-shadow: 14px 17px 13px -11px rgba(68, 68, 68, 0.37);
+  box-shadow: 0 10px 36px 0 rgba(0,0,0,0.16), 0 0 10px  rgba(0,0,0,0.06), 0 10px 36px 0 rgba(0,0,0,0.16);
+  -webkit-box-shadow: 0 10px 36px 0 rgba(0,0,0,0.16), 0 0 10px  rgba(0,0,0,0.06), 0 10px 36px 0 rgba(0,0,0,0.16);;
 }
 
 /* Used on: home page */
