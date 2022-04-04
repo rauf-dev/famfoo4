@@ -1,45 +1,33 @@
-# Client Side Image upload for new meal
+# Image Upload For New Meal
+
+- [Image Upload For New Meal](#image-upload-for-new-meal)
+- [1. Introduction](#1-introduction)
+- [2. Requirements](#2-requirements)
+- [3. Solutions Available](#3-solutions-available)
+- [4. Server Side Image Upload](#4-server-side-image-upload)
+  - [4.1 Server Side Sequence Diagram](#41-server-side-sequence-diagram)
+- [5. Client Side Image upload](#5-client-side-image-upload)
+  - [5.1 Client Side Sequence diagram](#51-client-side-sequence-diagram)
+  - [5.2 Comparison of Client Side Solutions](#52-comparison-of-client-side-solutions)
+- [6. Solution](#6-solution)
+
+# 1. Introduction
 
 In the context of saving a new meal, this document describes the image upload process, it's requirements and reasons for solution implemented.
 
-For details on Server side image upload, see 3.2 Previous implementation.
-
-# 1. Process
-
-## 1.1 Description
 Each Meal is stored as document in MongoDB. Meal image is not stored in MongoDB. Only reference of image (ImageKit-ImageID, locationURL, etc) saved to corresponding meal document in  MongoDB.
 
-This means the image must be saved and an ImageKit-ImageID returned to client so that when client saves the meal data (a form) to MongoDB, the respective image data is available.
+This means the image must be saved and an ImageKit-ImageID returned to client so that when client saves the meal data (form data) to MongoDB, the respective image data is available.
 
-## 1.2 Sequence diagram
-```mermaid
-sequenceDiagram
-    participant CLIENT AddMealForm
-    participant SERVER
-    participant IMAGEKIT
-    participant MONGODB
-    CLIENT AddMealForm->>IMAGEKIT: Upload image
-    activate IMAGEKIT
-    IMAGEKIT->>CLIENT AddMealForm: Return results which populate image preview
-    activate CLIENT AddMealForm
-    IMAGEKIT->>CLIENT AddMealForm: Return results which populate hidden form fields
-    deactivate IMAGEKIT
-    CLIENT AddMealForm->>SERVER: Submit button REST API: Save all fields to Db
-    deactivate CLIENT AddMealForm
-    activate SERVER
-    SERVER->>MONGODB: ASYNC/AWAIT: Save all fields to Db
-    deactivate SERVER
-    activate MONGODB
-    MONGODB->>SERVER: Return success
-    deactivate MONGODB
-    activate SERVER
-    SERVER->>CLIENT AddMealForm: REST API Response: success
-    deactivate SERVER
-```
+# 2. Requirements
 
-## 1.3 Database fields
+- Saving a new meal, user enters meal name, description, category and image. Meal data is stored in MongoDB.
+- The meals' image is saved to imageKit.io ligrary. The MongoDB meal document contains reference to the image location. Image is not stored in MongoDB.
+- Client side image upload in order to reduce load, traffic and complexity on the server.
+- User can select existing image on device or capture a new image using device camera.
+- A preview of the selected / captured image is optionaldesired but optional at this stage.
 
-non-exhaustive, just for understanding purposes
+To provide a better overview when reading this document, here are some of the more important **database fields** for a meal.
 
 | MongoDB document field | Source | Comment |
 |---|:---|---|
@@ -54,27 +42,23 @@ non-exhaustive, just for understanding purposes
 
 
 
+# 3. Solutions Available   
 
-# 2. Requirements
+1. Server side image upload using multer
+2. Client side image upload, three approaches possible:
+    1. Use ImageKit client side upload API.
+    2. Use a upload widget
+         - Uppy - A sleek, modular JavaScript file uploader that integrates seamlessly with any application. It allows users to pick files from local devices, webcam or Drive, Facebook, Instagram, and Dropbox.
+        - Dropzone.js - An open-source JS library that provides drag and drop file uploads with image previews. It’s lightweight, doesn’t depend on any other library (like jQuery), and is highly customizable.
 
-- Saving a new meal, user enters meal name, description, category and image. Meal data is stored in MongoDB.
-- The meals' image is saved to imageKit.io ligrary. The MongoDB meal document contains reference to the image location. Image is not stored in MongoDB.
-- Client side image upload in order to reduce load, traffic and complexity on the server.
-- User can select existing image on device or capture a new image using device camera.
-- A preview of the selected / captured image is optionaldesired but optional at this stage.
 
-# 3. Solutions Available
-1. Use ImageKit client side upload API, Javascript.
-2. Use a upload widget
-   1. Uppy - A sleek, modular JavaScript file uploader that integrates seamlessly with any application. It allows users to pick files from local devices, webcam or Drive, Facebook, Instagram, and Dropbox.Uppy - A sleek, modular JavaScript file uploader that integrates seamlessly with any application. It allows users to pick files from local devices, webcam or Drive, Facebook, Instagram, and Dropbox.
-   2. Dropzone.js - An open-source JS library that provides drag and drop file uploads with image previews. It’s lightweight, doesn’t depend on any other library (like jQuery), and is highly customizable.
-
-## 3.2 Previous implementation
+# 4. Server Side Image Upload
 Server side image upload (Multer, server local storage) was used and worked pretty well. Reasons for changing to client side upload are:
-- Reduce load & bandwidth to server
-- Reduce complexity of the process
-- Reduce deployment complexity. Local storage image folder was sometimes missing upon deployment if empty (DigitalOcean). Had to CLI into server and manually create the folder.
+- Reduce load & bandwidth to server.
+- Reduce complexity of the process.
+- Reduce deployment complexity. Local storage image folder was sometimes missing upon deployment if empty (DigitalOcean). Workaround involved CLI into server and manually create the folder.
 
+## 4.1 Server Side Sequence Diagram
 The server side solution worked as follows
 
 ```mermaid
@@ -108,8 +92,47 @@ sequenceDiagram
     deactivate SERVERLocalStorage
 ```
 
+# 5. Client Side Image upload
 
-## Comparison
+- Use ImageKit client side upload API.
+- upload widget Uppy - A sleek, modular JavaScript file uploader that integrates seamlessly with any application. It allows users to pick files from local devices, webcam or Drive, Facebook, Instagram, and Dropbox.
+- upload widget Uppy Dropzone.js - An open-source JS library that provides drag and drop file uploads with image previews. It’s lightweight, doesn’t depend on any other library (like jQuery), and is highly customizable.
+
+## 5.1 Client Side Sequence diagram
+```mermaid
+sequenceDiagram
+    participant CLIENT AddMealForm
+    participant SERVER
+    participant IMAGEKIT
+    participant MONGODB
+    CLIENT AddMealForm->>IMAGEKIT: Upload image
+    activate IMAGEKIT
+    IMAGEKIT->>CLIENT AddMealForm: Return results which populate image preview
+    activate CLIENT AddMealForm
+    IMAGEKIT->>CLIENT AddMealForm: Return results which populate hidden form fields
+    deactivate IMAGEKIT
+    CLIENT AddMealForm->>SERVER: Submit button REST API: Save all fields to Db
+    deactivate CLIENT AddMealForm
+    activate SERVER
+    SERVER->>MONGODB: ASYNC/AWAIT: Save all fields to Db
+    deactivate SERVER
+    activate MONGODB
+    MONGODB->>SERVER: Return success
+    deactivate MONGODB
+    activate SERVER
+    SERVER->>CLIENT AddMealForm: REST API Response: success
+    deactivate SERVER
+```
+
+
+
+
+
+
+
+
+
+## 5.2 Comparison of Client Side Solutions
 
 |Feature|1 ImageKit API| 2.1 Uppy JS Framework| 2.2 Dropzone JS Framework|
 |-------|:----------:|:-----------------:|:------------------:|
@@ -119,6 +142,6 @@ sequenceDiagram
 |Source: gdrive, dropbox, facebook, Instagram|no|yes|?|
 |Beginner friendliness|Very good. Official documentation|Very good. Official ImageKit-Uppy API and documentation|Not good. Focused on drag-n-drop|
 
-# 4 Solution
+# 6. Solution
 Work in progress...
 Implementing image upload with Uppy JS using the official ImageKit-Uppy API
