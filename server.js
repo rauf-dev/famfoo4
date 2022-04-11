@@ -13,6 +13,7 @@ const categoryPage = require('./routes/meals/categoryRoute');
 const mealDetailsPage = require('./routes/meals/mealDetailsRoute');
 const editMealPage = require('./routes/meals/editMealRoute');
 const newMealImageUploadMulterRoute = require('./routes/meals/newMealImageUploadMulterRoute');
+const newMealSaveMealRoute = require('./routes/meals/newMealSaveMealRoute');
 
 
 // INIT APP
@@ -37,6 +38,7 @@ app.use('/meals/category', categoryPage);
 app.use('/meals/meal', mealDetailsPage);
 app.use('/meals/edit', editMealPage);
 app.use('/meals/new/imageMulter', newMealImageUploadMulterRoute);
+app.use('/meals/new/savemeal', newMealSaveMealRoute);
 
 //Connect to mongoDB
 try {

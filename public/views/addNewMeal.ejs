@@ -24,16 +24,16 @@
                 <div id="mealImageHelp" class="form-text">A picture is mandatory.</div>
                 <input type="file" class="form-control" id="image_uploads" name="image_uploads" accept="">
             </div>
-            <form action="/meals/new" method="POST" id="uploadMulterForm" class="needs-validation newMealForm">
+            <form action="/meals/new/savemeal" method="POST" id="uploadMulterForm" class="needs-validation newMealForm">
                 <div class="mb-3 div-mealName">
                     <label for="mealName" class="form-label">Meal Name</label>
                     <div id="mealNameHelp" class="form-text">Mandatory field. Short name of the meal.</div>
-                    <input type="text" class="form-control" id="mealName" aria-describedby="inputMealName">
+                    <input type="text" class="form-control" id="mealName" name="mealName" aria-describedby="inputMealName">
                 </div>
                 <div class="mb-3 divMealDescription">
                     <label for="mealDesription" class="form-label">Short Description</label>
                     <div id="mealDescriptionHelp" class="form-text">Optional field.</div>
-                    <textarea id="mealDescription" class="form-control" aria-label="With textarea"></textarea>
+                    <textarea id="mealDescription" class="form-control" aria-label="With textarea" name="mealDesription" ></textarea>
 
                 </div>
                 <label for="mealName" class="form-label">Select Meal Category</label>
