@@ -16,6 +16,9 @@
             </ol>
         </nav>
 
+        <!-- MESSAGES -->
+        <%- messages('messages', locals) %>
+
         <!-- GALLERY OF MEALS IN SPECIFIC MEAL CATEGORY -->
         <section class="section-template section-template__fullHeightSection">
             <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
@@ -26,7 +29,7 @@
                                 <img src="<%= `${meals.results[index].imageLocation}` %> " class="card-img-top"
                                     alt="Image of  <%= meals.results[index].mealName %> ">
                             </a>
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <h5 class="card-title">
                                     <%= meals.results[index].mealName %>
                                 </h5>

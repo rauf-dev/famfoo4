@@ -8,6 +8,7 @@ fileField.addEventListener('change', uploadMulter)
 
 
 function uploadMulter(image){
+  
     image.preventDefault();
     let formData = new FormData()
     formData.append('image',fileField.files[0]);

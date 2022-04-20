@@ -8,36 +8,37 @@
 <body>
     <%- include('partials/navbar') %>
 
-<!-- BREADCRUMB -->
-<nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Library</li>
-    </ol>
-  </nav>
+        <!-- BREADCRUMB -->
+        <nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Suggestion</li>
+            </ol>
+        </nav>
 
         <!-- SUGGESTION -->
         <section class="section-template section-template__fullHeightSection text-center">
             <h2 class="mb-4">Get A Suggestion</h2>
             <div class="mb-4 text-center sectionDivTemplate-singleImageDiv">
-            <!-- <div class="mb-4 text-center suggestionPage-suggestionImageDiv"> -->
-                <!-- <img src="/assets/demo/lily-banse--YHSwy6uqvk-unsplash.jpg"
-                    class="suggestionPage-suggestionImage rounded img-fluid" alt="..."> -->
-                <img src="/assets/demo/chad-montano-eeqbbemH9-c-unsplash.jpg"
-                        class="sectionDivTemplate-singleImage rounded img-fluid" alt="...">
-                <!-- <img src="/assets/demo/chad-montano-eeqbbemH9-c-unsplash.jpg"
-                        class="suggestionPage-suggestionImage rounded img-fluid" alt="..."> -->
+                <img src="<%= `${randomMeal.imageLocation}?tr=h-500` %>"
+                    class="sectionDivTemplate-singleImage rounded img-fluid" alt="image of suggested meal">
             </div>
 
             <div class="suggestionPage-suggestionMealData mb-4">
-                <h4>Classic American Style Pancakes</h4>
-                <p class="small text-muted suggestionPage-suggestionMealData-category">Breakfast</p>
-                <p>Fluffy and delicious with maple syrup</p>
-                
+                <h4>
+                    <%= randomMeal.mealName %>
+                </h4>
+                <p>
+                    <%= randomMeal.mealDescription %>
+                </p>
+                <p class="small text-muted suggestionPage-suggestionMealData-category">
+                    <%= randomMeal.mealCategory %>
+                </p>
+
             </div>
             <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
-            <!-- <div class="mb-4 text-center suggestionPage-suggestionButtonDiv"> -->
-                <a href="#" class="btn btn-primary btn-lg px-4 me-md-2">Next Suggestion</button></a>
+                <!-- <div class="mb-4 text-center suggestionPage-suggestionButtonDiv"> -->
+                <a href="/suggestion" class="btn btn-primary btn-lg px-4 me-md-2">Next Suggestion</button></a>
             </div>
         </section>
 

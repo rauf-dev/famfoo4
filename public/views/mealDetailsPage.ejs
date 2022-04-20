@@ -7,7 +7,7 @@
 
 <body>
     <%- include('partials/navbar') %>
-
+    <%- messages('messages', locals) %>
 <!-- BREADCRUMB -->
 <nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -31,7 +31,7 @@
             </div>
             <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
                 <a href="/meals/edit/<%= meal.id %> " class="btn btn-primary btn-sm px-4 me-md-2">Edit Meal</button></a>
-                <a href="#" class="btn btn-outline-danger btn-sm px-4 me-md-2">Delete Meal</button></a>
+                <a href="/meals/delete/<%= meal.id %>" class="btn btn-outline-danger btn-sm px-4 me-md-2">Delete Meal</button></a>
             </div>
         </section>
 

@@ -42,7 +42,8 @@ body {
   padding: 1rem;
   /* opacity: 1; */
   background: rgba(255, 255, 255, 0.9);
-  min-height: 85vh;
+  min-height: 75vh;
+  /* min-height: 85vh; */
   position: relative;
   margin: 0 auto;
 }
@@ -56,14 +57,17 @@ body {
 
 /* Used on: GetSuggestion and MealDetails pages */
 .sectionDivTemplate-singleImageDiv{
-  max-height: 500px;
+  max-height: 400px;
   width: 100%;
 }
 .sectionDivTemplate-singleImage{
-  max-height: 500px;
+  max-height: 400px;
   background: rgb(255, 255, 255);  
 }
-
+/* CATEGORY PAGE */
+.card-img-top {
+  max-height: 300px;
+}
 
 /* ADD NEW MEAL PAGE */
 .form-text {
@@ -80,4 +84,8 @@ body {
 /* EDIT MEAL PAGE */
 .section-editmeal-hiddenform{
   /* display: none; */
+}
+
+.section-editmeal .section-template__fullHeightSection__oneButton{
+position: relative;
 }
