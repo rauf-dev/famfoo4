@@ -11,15 +11,14 @@ function trimStringAndSetCheckedMealCategory() {
   const hiddenMealDescription = document.getElementById(
     'hiddenMealDescription'
   );
+
   // remove whitespace and append meal description to textarea
-  if (hiddenMealDescription.value) {
-    let strMealDesc = hiddenMealDescription.value;
-    strMealDesc.trim();
-    mealDescription.value = strMealDesc;
-  }
+  let strMealDesc = hiddenMealDescription.value;
+  strMealDesc.trim();
+  mealDescription.value = strMealDesc;
 
   // MEAL CATEGORY
-//   Set radio select to checked as per meal category
+  //   Set radio select to checked as per meal category
   console.log('setting category');
   const mealCategoryMains = document.getElementById('mealCategoryMains');
   const mealCategoryBreakfast = document.getElementById(
@@ -44,5 +43,5 @@ if (document.readyState === 'loading') {
   );
 } else {
   // `DOMContentLoaded` already fired
-  trimString();
+  trimStringAndSetCheckedMealCategory();
 }
