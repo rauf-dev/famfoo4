@@ -73,16 +73,13 @@
                         <a href="/meals/newMealPage" class="btn btn-light btn-lg px-4 me-md-2">Reset Form
                         </a>
                     </div>
-                    <!-- hidden input for multer filenames transit to imagekit -->
+                    <!-- results from imagekit upload to transit to db -->
                     <div class="hiddenInputs">
                         <input type="hidden" name="imageName" class="imageName" id="imageName">
                         <input type="hidden" name="imageLocation" class="imageLocation" id="imageLocation">
                         <input type="hidden" name="imageThumbnail" class="imageThumbnail" id="imageThumbnail">
                         <input type="hidden" name="imagekitImageId" class="imagekitImageId" id="imagekitImageId">
-                        <!-- <input type="hidden" class="hiddenMulterFileData" id="multerFilenameInput"
-                        name="multerFilenameInput" />
-                    <input type="hidden" class="hiddenMulterFileData" id="multerFilePathInput"
-                        name="multerFilePathInput" /> -->
+
                     </div>
                 </form>
             </section>
@@ -97,7 +94,6 @@
                 <script type="text/javascript"
                     src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
                 <script src="/scripts/imageUploadImagekit.js"></script>
-                <!-- <script src="/scripts/imageUploaderMulter.js"></script> -->
 
 
 </body>

@@ -42,11 +42,10 @@ console.log(authParameters);
 // Removes tag "temp", adds new tag with db-id
 // to confirm image data saved to db
 
-
 function updateImagekitTag(file_Id, tag) {
   // args tag = `db-` + mealId;
   // args file_id = savedMeal.imagekitImageId;
-  
+
   console.log('Update image tags');
   imagekit.updateFileDetails(
     file_Id,
@@ -63,6 +62,19 @@ function updateImagekitTag(file_Id, tag) {
   );
 }
 
+// Edit meal. Delete replaced image
+function deleteImageById(file_id) {
+  imagekit.deleteFile(file_id, function (error, result) {
+    if (error) console.log(error);
+    else {
+      // console.log(result);
+      // Code from imagekit to console.log result makes no sense here because 204 has no content. Maybe makes more sense when run in frontend (browser)
+      const result = 'successfull, 204 no content'
+      return result;
+    }
+  });
+}
+
 // Cleanup everytime new meal page is loaded
 // Finds images with tag "temp" and deletes them
 function findImgTempTagAndDelete() {
@@ -73,7 +85,10 @@ function findImgTempTagAndDelete() {
     },
     function (error, result) {
       if (error) console.log(error);
-      else console.log(result);
+      else {
+        console.log(result); //Okay is 204 status code with empty body
+        return result;
+      }
     }
   );
   // tbd: Delete images found
@@ -85,4 +100,5 @@ module.exports = {
   authParameters,
   updateImagekitTag,
   findImgTempTagAndDelete,
+  deleteImageById,
 };

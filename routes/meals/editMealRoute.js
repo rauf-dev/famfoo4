@@ -4,8 +4,7 @@ const Meal = require('../../models/mealSchema');
 
 const { body, validationResult, check } = require('express-validator'); //Validation
 
-const retrieveMulterImage = require('../../utils/retrieveMulterImage');
-// const { uploadToImageKit, deleteImageInImageKit } = require('../../utils/imageUploaderImageKit');
+const { deleteImageById } = require('../../utils/imagekit');
 
 // MIDDLEWARE
 router.use(express.json());
@@ -27,7 +26,6 @@ router.post(
   check('mealCategory').isString().trim().withMessage('Select a meal category'),
   check('mealDescription').isString().trim().withMessage('Server error. Must be string'),
   async (req, res) => {
-    console.log('###########################');
     console.log('in edit meal post route');
 
     // Server side validation, error handling
@@ -44,25 +42,13 @@ router.post(
         let mealPostEdit = {};
 
         // check if image edited
-        if (req.body.multerFilenameInput) {
-          const imageToBeUploaded = req.body.multerFilenameInput;
-
-          //retrieves file object from multer local storage
-          const file = retrieveMulterImage(imageToBeUploaded); //returns file object
-
-          //  --> then upload file to imagekitb
-          const result = await uploadToImageKit(file, imageToBeUploaded); //returns object with results from imageKit upload
-
+        console.log(req.body);
+        if (req.body.imageName) {
           // populate new image data
-          mealPostEdit['imageName'] = result.name;
-          mealPostEdit['imageLocation'] = result.url;
-          mealPostEdit['imageThumbnail'] = result.thumbnailUrl;
-          mealPostEdit['imagekitImageId'] = result.fileId;
-
-          //delete old meal image from imagekit
-          const resultDeleteImagekitImage = await deleteImageInImageKit(
-            mealPreEdit.imagekitImageId
-          );
+          mealPostEdit['imageName'] = req.body.imageName;
+          mealPostEdit['imageLocation'] = req.body.imageLocation;
+          mealPostEdit['imageThumbnail'] = req.body.imageThumbnail;
+          mealPostEdit['imagekitImageId'] = req.body.imagekitImageId;
         }
 
         // check for edits
@@ -84,12 +70,16 @@ router.post(
         //load the meal with all edits included
         const meal = await Meal.findById(req.params.id);
 
+        //delete old meal image from imagekit
+        const file_id = mealPreEdit.imagekitImageId;
+        const deleteImageResult = await deleteImageById(file_id);
+        console.log(deleteImageResult);
+
         //show flash message
         req.flash('success', 'Edit Saved');
 
         // Show meal details page of newly edited meal
         res.render('./mealDetailsPage', { meal });
-        
       } catch (err) {
         console.log('in EDIT MEAL error');
         console.error(err);
