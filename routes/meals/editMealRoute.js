@@ -5,7 +5,7 @@ const Meal = require('../../models/mealSchema');
 const { body, validationResult, check } = require('express-validator'); //Validation
 
 const retrieveMulterImage = require('../../utils/retrieveMulterImage');
-const { uploadToImageKit, deleteImageInImageKit } = require('../../utils/imageUploaderImageKit');
+// const { uploadToImageKit, deleteImageInImageKit } = require('../../utils/imageUploaderImageKit');
 
 // MIDDLEWARE
 router.use(express.json());

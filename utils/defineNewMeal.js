@@ -1,16 +1,18 @@
 const Meal = require('../models/mealSchema');
 
-function defineNewMeal (result, reqbody){
+async function defineNewMeal (reqbody){
     // COMMENT: define the new meal
+    console.log('define new meal function.');
     const meal = new Meal({
         mealCategory: reqbody.mealCategory,
         mealName: reqbody.mealName,
-        mealDescription: reqbody.mealDescription,
-        imageName: result.name,
-        imageLocation: result.url,
-        imageThumbnail: result.thumbnailUrl,
-        imagekitImageId: result.fileId,
+        mealDescription: reqbody.mealDesription,
+        imageName: reqbody.imageName,
+        imageLocation: reqbody.imageLocation,
+        imageThumbnail: reqbody.imageThumbnail,
+        imagekitImageId: reqbody.imagekitImageId,
       });
+
       return meal;
 }
 

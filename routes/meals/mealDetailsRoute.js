@@ -6,12 +6,11 @@ const router = express.Router();
 
 router.get('/:id', async (req, res) => {
     try {
-        console.log('In GET meal by ID route');
+        console.log('In GET meal by ID route. req.params below');
         
         // query mongoDB
         console.log(req.params);
         const meal = await Meal.findById(req.params.id);
-        console.log({ meal });
         res.render('./mealDetailsPage', { meal });
       } catch (err) {
         res.json({ message: err });

@@ -1,7 +1,10 @@
-// const Meal = require('../../models/mealSchema');
+// !!NOT IN USE
+const Meal = require('../models/mealSchema');
 
-function saveMealToMongoDb (meal){
-    const savedMeal = meal.save();
+async function saveMealToMongoDb (meal){
+    console.log('save meal to db function');
+    const savedMeal = await meal.save();
+    console.log('savedMeal is:');
     console.log(savedMeal);
     return savedMeal;
 }

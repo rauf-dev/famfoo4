@@ -5,6 +5,8 @@ const mongoose = require('mongoose'); //mongoDB
 const session = require('express-session'); //Messaging: stores session
 const flash = require('connect-flash'); //Messaging: stores the messages
 const messages = require('express-messages'); //Messaging: shows the messages
+const { imagekit, authParameters } = require('./utils/imagekit');
+const fs = require('fs');
 
 require('dotenv/config'); //read dotenv file
 
@@ -55,6 +57,12 @@ app.use(function (req, res, next) {
 
 
 // ROUTES
+app.get('/auth', (req, res)=>{
+  const authParameters = imagekit.getAuthenticationParameters();
+  res.send(authParameters);
+});
+
+
 app.use('/', home);
 app.use('/meals/newMealPage', newMealPage);
 app.use('/meals/suggestion', suggestionPage);

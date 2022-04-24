@@ -18,76 +18,86 @@
 
         <!-- MESSAGE -->
         <%- messages('messages', locals) %>
-        
-        <!-- ADD NEW MEAL FORM -->
-        <section class="section-template section-template__fullHeightSection">
-            <!-- <section class="section-template section-addMeal-addMealForm"> -->
-            <h2 class="mb-4">Add New Meal</h2>
-            <div class="mb-3">
-                <label class="form-label" for="image_uploads">Take a photo or select existing</label>
-                <div id="mealImageHelp" class="form-text">A picture is required.</div>
-                <input type="file" class="form-control" id="image_uploads" name="image_uploads" accept="image/*">
-            </div>
-            <form action="/meals/new/savemeal" method="POST" id="uploadMulterForm" class="needs-validation newMealForm">
-                <div class="mb-3 div-mealName">
-                    <label for="mealName" class="form-label">Meal Name</label>
-                    <div id="mealNameHelp" class="form-text">A name is required. Short name of the meal.</div>
-                    <input type="text" class="form-control" id="mealName" name="mealName" aria-describedby="inputMealName" required>
-                </div>
-                <div class="mb-3 divMealDescription">
-                    <label for="mealDesription" class="form-label">Short Description</label>
-                    <div id="mealDescriptionHelp" class="form-text">Optional field.</div>
-                    <textarea id="mealDescription" class="form-control" aria-label="meal description field" name="mealDesription" ></textarea>
 
+            <!-- ADD NEW MEAL FORM -->
+            <section class="section-template section-template__fullHeightSection">
+                <!-- <section class="section-template section-addMeal-addMealForm"> -->
+                <h2 class="mb-4">Add New Meal</h2>
+                <div class="mb-3">
+                    <label class="form-label" for="image_uploads">Take a photo or select existing</label>
+                    <div id="mealImageHelp" class="form-text">A picture is required.</div>
+                    <input type="file" class="form-control" id="image_uploads" name="image_uploads" accept="image/*">
                 </div>
-                <label for="mealCategory" class="form-label">Select Meal Category</label>
-                <div id="div-mealCategory" class="form-text mealCategoryHelp">Mandatory field. Select one category.
-                </div>
-                <div class="form-check radioSelectsMealCategory">
-                    <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryMains"
-                        value="mains" checked>
-                    <label class="form-check-label" for="mealCategoryMains">
-                        Mains
-                    </label>
-                </div>
-                <div class="form-check radioSelectsMealCategory">
-                    <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryBreakfast"
-                        value="breakfast">
-                    <label class="form-check-label" for="mealCategoryBreakfast">
-                        Breakfast
-                    </label>
-                </div>
-                <div class="form-check radioSelectsMealCategory mb-4">
-                    <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryBreakfast"
-                        value="snacks">
-                    <label class="form-check-label" for="mealCategoryBreakfast">
-                        Snacks
-                    </label>
-                </div>
-                <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
-                    <input class="btn btn-primary btn-lg px-4 me-md-2" id="submitNewMeal" type="submit"
-                        value="Submit" />
-                    <a href="/meals/newMealPage" class="btn btn-light btn-lg px-4 me-md-2">Reset Form
-                    </a>
-                </div>
-                <!-- hidden input for multer filenames transit to imagekit -->
-                <div class="hiddenInputs">
-                    <input type="hidden" class="hiddenMulterFileData" id="multerFilenameInput"
+                <form action="/meals/new/savemeal" method="POST" id="uploadMulterForm"
+                    class="needs-validation newMealForm">
+                    <div class="mb-3 div-mealName">
+                        <label for="mealName" class="form-label">Meal Name</label>
+                        <div id="mealNameHelp" class="form-text">A name is required. Short name of the meal.</div>
+                        <input type="text" class="form-control" id="mealName" name="mealName"
+                            aria-describedby="inputMealName" required>
+                    </div>
+                    <div class="mb-3 divMealDescription">
+                        <label for="mealDesription" class="form-label">Short Description</label>
+                        <div id="mealDescriptionHelp" class="form-text">Optional field.</div>
+                        <textarea id="mealDescription" class="form-control" aria-label="meal description field"
+                            name="mealDesription"></textarea>
+
+                    </div>
+                    <label for="mealCategory" class="form-label">Select Meal Category</label>
+                    <div id="div-mealCategory" class="form-text mealCategoryHelp">Mandatory field. Select one category.
+                    </div>
+                    <div class="form-check radioSelectsMealCategory">
+                        <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryMains"
+                            value="mains" checked>
+                        <label class="form-check-label" for="mealCategoryMains">
+                            Mains
+                        </label>
+                    </div>
+                    <div class="form-check radioSelectsMealCategory">
+                        <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryBreakfast"
+                            value="breakfast">
+                        <label class="form-check-label" for="mealCategoryBreakfast">
+                            Breakfast
+                        </label>
+                    </div>
+                    <div class="form-check radioSelectsMealCategory mb-4">
+                        <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryBreakfast"
+                            value="snacks">
+                        <label class="form-check-label" for="mealCategoryBreakfast">
+                            Snacks
+                        </label>
+                    </div>
+                    <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
+                        <input class="btn btn-primary btn-lg px-4 me-md-2" id="submitNewMeal" type="submit"
+                            value="Submit" />
+                        <a href="/meals/newMealPage" class="btn btn-light btn-lg px-4 me-md-2">Reset Form
+                        </a>
+                    </div>
+                    <!-- hidden input for multer filenames transit to imagekit -->
+                    <div class="hiddenInputs">
+                        <input type="hidden" name="imageName" class="imageName" id="imageName">
+                        <input type="hidden" name="imageLocation" class="imageLocation" id="imageLocation">
+                        <input type="hidden" name="imageThumbnail" class="imageThumbnail" id="imageThumbnail">
+                        <input type="hidden" name="imagekitImageId" class="imagekitImageId" id="imagekitImageId">
+                        <!-- <input type="hidden" class="hiddenMulterFileData" id="multerFilenameInput"
                         name="multerFilenameInput" />
                     <input type="hidden" class="hiddenMulterFileData" id="multerFilePathInput"
-                        name="multerFilePathInput" />
-                </div>
-            </form>
-        </section>
+                        name="multerFilePathInput" /> -->
+                    </div>
+                </form>
+            </section>
 
-        <!-- FOOTER -->
-        <%- include('partials/footer') %>
+            <!-- FOOTER -->
+            <%- include('partials/footer') %>
 
-            <!-- SCRIPTS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
-            <script src="/scripts/imageUploaderMulter.js"></script>
+                <!-- SCRIPTS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                    crossorigin="anonymous"></script>
+                <script type="text/javascript"
+                    src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
+                <script src="/scripts/imageUploadImagekit.js"></script>
+                <!-- <script src="/scripts/imageUploaderMulter.js"></script> -->
 
 
 </body>
