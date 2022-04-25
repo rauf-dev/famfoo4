@@ -6,7 +6,7 @@ const session = require('express-session'); //Messaging: stores session
 const flash = require('connect-flash'); //Messaging: stores the messages
 const messages = require('express-messages'); //Messaging: shows the messages
 const { imagekit, authParameters } = require('./utils/imagekit');
-const fs = require('fs');
+// const fs = require('fs');
 
 require('dotenv/config'); //read dotenv file
 
@@ -17,7 +17,6 @@ const suggestionPage = require('./routes/meals/suggestionRoute');
 const categoryPage = require('./routes/meals/categoryRoute');
 const mealDetailsPage = require('./routes/meals/mealDetailsRoute');
 const editMeal = require('./routes/meals/editMealRoute');
-const newMealImageUploadMulterRoute = require('./routes/meals/newMealImageUploadMulterRoute');
 const newMealSaveMealRoute = require('./routes/meals/newMealSaveMealRoute');
 const deleteMealRoute = require('./routes/meals/deleteMealRoute');
 
@@ -69,7 +68,6 @@ app.use('/meals/suggestion', suggestionPage);
 app.use('/meals/category', categoryPage);
 app.use('/meals/meal', mealDetailsPage);
 app.use('/meals/edit', editMeal);
-app.use('/meals/new/imageMulter', newMealImageUploadMulterRoute);
 app.use('/meals/new/savemeal', newMealSaveMealRoute);
 app.use('/meals/delete', deleteMealRoute);
 app.use('/suggestion', suggestionPage);

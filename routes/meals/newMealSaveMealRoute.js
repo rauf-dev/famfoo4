@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { body, validationResult, check } = require('express-validator');
-
-// const uploadToImageKit = require('../../utils/imageUploaderImageKit');
 const defineNewMeal = require('../../utils/defineNewMeal');
-// const saveMealToMongoDb = require('../../utils/saveMealToMongoDb');
 const { updateImagekitTag } = require('../../utils/imagekit');
 
 // MIDDLEWARE

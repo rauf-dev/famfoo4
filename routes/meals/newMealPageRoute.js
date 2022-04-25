@@ -1,19 +1,11 @@
 const express = require('express');
-const fs = require('fs');
-const deleteAllImagesMulterFolder = require('../../utils/imageDeleterMulter');
 const { findImgTempTagAndDelete } = require('../../utils/imagekit');
 const router = express.Router();
-
-
-
-
-
 
 router.get('/', (req, res) => {
   try {
     console.log('########### ADD NEW MEAL ROUTE ##################')
-    console.log('Deletes images in multer folder');
-    deleteAllImagesMulterFolder();
+    console.log('fix so cleanup imagekit temp tags works');
     findImgTempTagAndDelete();
   } catch (error) {
     console.log(error);

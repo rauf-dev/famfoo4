@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.json({ message: err });
   }
-  // res.send('Welcome to MAINS page');
+
 });
 
 module.exports = router;
