@@ -9,7 +9,7 @@ fileField.addEventListener('change', upload);
 const imagekit = new ImageKit({
     publicKey: "public_sByx+wwcY0EsO9JcZ/zGoCx3vts=",
     urlEndpoint: "https://ik.imagekit.io/ptrqyxh4ajrm", 
-    authenticationEndpoint: "http://localhost:3005/auth"
+    authenticationEndpoint: "https://mealorg.heroku.com/auth"
 });
 
 
