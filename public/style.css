@@ -51,8 +51,8 @@ body {
 /* Used on: AddNewMeal, MealDetails and Suggestion pages */
 .section-template__fullHeightSection__oneButton{
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
 }
 
 /* Used on: GetSuggestion and MealDetails pages */
@@ -67,6 +67,7 @@ body {
 /* CATEGORY PAGE */
 .card-img-top {
   max-height: 300px;
+  object-fit: cover;
 }
 
 /* ADD NEW MEAL PAGE */
