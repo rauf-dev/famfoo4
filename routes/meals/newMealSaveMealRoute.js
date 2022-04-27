@@ -14,7 +14,11 @@ router.post(
   check('mealName').notEmpty().isString().withMessage('Meal Name is required'),
   check('mealCategory').notEmpty().isString().withMessage('Select a meal category'),
   check('mealDesription').isString().withMessage('Server error. Must be string'),
-
+  check('imageName').notEmpty().isString().withMessage('Image is required'),
+  check('imageLocation').notEmpty().isString().withMessage('Image location missing'),
+  check('imageThumbnail').notEmpty().isString().withMessage('Image thumbnail missing'),
+  check('imagekitImageId').notEmpty().withMessage('Imagekit image ID missing'),
+  
   async (req, res) => {
     // At this point of submitting the form, meal image has already been uploaded in front end with a tag "temp"
     console.log('POST Route; Saving new meal. req.body below');
