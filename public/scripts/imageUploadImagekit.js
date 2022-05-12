@@ -26,7 +26,7 @@ function upload(e) {
     },
     function (err, result) {
       if (err) {
-        console.alert('Error in file upload. Error response below');
+        // console.alert('Error in file upload. Error response below');
         console.log(err);
       } else {
         console.log('File uploaded. Success response below');
