@@ -8,22 +8,82 @@
 <body>
     <%- include('partials/navbar') %>
 
+        <!-- CENTERED HERO -->
+        <div class="hero-logo  py-5 mt-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/assets/dinner-256.svg" alt="" width="128" height="128">
+            <h1 class="logo-title display-3 fw-bold px-4">SANAMEALS.COM</h1>
+            <p class="lead mb-4 px-4">simplify meal planning</p>
+            <img class="arrow-down" src="https://img.icons8.com/ios-filled/100/000000/down--v2.png" />
+            <img class="wave-bottom" src="/assets/wave-black1.svg">
+        </div>
 
-        <!-- HERO -->
-        <section class="section-homePageHero">
-            <div class="px-4 py-5 my-5 text-center">
-                <!-- <img class="d-block mx-auto mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72"
-                    height="57"> -->
-                <h1 class="display-3 fw-bold">Family Food Organiser</h1>
-                <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Quickly find and organise your favorite family meals. Search in
-                        categories, get a suggestion and easily add new meals.</p>
+
+        <!-- FEATURES LIST -->
+        <section class="hero-features">
+            <div class="hero-logo text-center">
+                <div class="px-5 ">
+                    <h2 class="display-3 fw-semibold fst-italic">powerful <span class="yellow-text">
+                            meal organizing and planning
+                        </span> for our family</h2>
+
                 </div>
+                <!-- features list -->
+                <div class="container ">
+                    <div class="row g-4 py-5 px-5 row-cols-1 row-cols-lg-3">
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+                                <h2>Save and organise meals</h2>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+                                <h2>Add personal ratings</h2>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+                                <h2>Get suggestions</h2>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+                                <h2>Weekly meal planner</h2>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+                                <h2>Whats in my fridge?</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <img class="wave-bottom" src="/assets/wave-white1.svg">
             </div>
         </section>
 
         <!-- MAINS -->
-        <section class="section-template section-template-opaque section-home-mains mt-4 mb-4">
+        <section class="section-template section-template-opaque section-home-mains">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
                     <div class="col-md-6">
@@ -36,7 +96,7 @@
                             get you started.</p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <a href="/meals/category/mains?page=1&limit=5"
-                                class="btn btn-primary btn-lg px-4 me-md-2">Browse Mains Category</a>
+                                class="btn btn-warning btn-lg px-4 me-md-2">Browse Mains Category</a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +104,7 @@
         </section>
 
         <!-- BREAKFAST, reversed-->
-        <section class="section-template section-template-opaque section-home-breakfast mt-4 mb-4">
+        <section class="section-template section-template-opaque section-home-breakfast">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row align-items-center g-5 py-5">
                     <div class="col-md-6">
@@ -57,7 +117,7 @@
                             here.</p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <a href="/meals/category/breakfast?page=1&limit=5"
-                                class="btn btn-primary btn-lg px-4 me-md-2">Browse Breakfast Category</button></a>
+                                class="btn btn-warning btn-lg px-4 me-md-2">Browse Breakfast Category</button></a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +125,7 @@
         </section>
 
         <!-- SNACKS -->
-        <section class="section-template section-template-opaque section-home-snacks mt-4 mb-4">
+        <section class="section-template section-template-opaque section-home-snacks">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
                     <div class="col-md-6">
@@ -78,7 +138,7 @@
                             bits here.</p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <a href="/meals/category/snacks?page=1&limit=5"
-                                class="btn btn-primary btn-lg px-4 me-md-2">Browse Snacks Category</button></a>
+                                class="btn btn-warning btn-lg px-4 me-md-2">Browse Snacks Category</button></a>
                         </div>
                     </div>
                 </div>
@@ -86,7 +146,7 @@
         </section>
 
         <!-- SUGGESTION, reversed-->
-        <section class="section-template section-template-opaque section-home-suggestion mt-4 mb-4">
+        <section class="section-template section-template-opaque section-home-suggestion">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row align-items-center g-5 py-5">
                     <div class="col-md-6">
@@ -97,7 +157,7 @@
                         <h1 class="display-5 fw-bold lh-1 mb-3">Suggestion</h1>
                         <p class="lead">Dont know what to cook? Get a suggestion here from past meals.</p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <a href="/meals/suggestion" class="btn btn-primary btn-lg px-4 me-md-2">Get A
+                            <a href="/meals/suggestion" class="btn btn-warning btn-lg px-4 me-md-2">Get A
                                 Suggestion</button></a>
                         </div>
                     </div>
@@ -106,7 +166,7 @@
         </section>
 
         <!-- ADD NEW MEAL -->
-        <section class="section-template section-template-opaque section-home-addmeal mt-4 mb-4">
+        <section class="section-template section-template-opaque section-home-addmeal">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
                     <div class="col-md-6">
@@ -118,7 +178,7 @@
                         <p class="lead">Found a meal you like, click here to add to the collection in two easy
                             steps.</p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <a href="/meals/newMealPage" class="btn btn-primary btn-lg px-4 me-md-2">Add New
+                            <a href="/meals/newMealPage" class="btn btn-warning btn-lg px-4 me-md-2">Add New
                                 Meal</button></a>
                         </div>
                     </div>
@@ -127,7 +187,7 @@
         </section>
 
         <!-- ABOUT THIS APP, reversed -->
-        <section class="section-template section-template-opaque section-home-aboutapp mt-4 mb-4">
+        <section class="section-template section-template-opaque section-home-aboutapp">
             <div class="container col-xxl-8 px-4 py-5">
                 <div class="row align-items-center justify-content-center g-5 py-5">
                     <div class="col-md-6">
@@ -138,7 +198,7 @@
                         <h1 class="display-5 fw-bold lh-1 mb-3">About This App</h1>
                         <p class="lead">Want to know how this app works and the motivation behind it?.</p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Give me the technical
+                            <button type="button" class="btn btn-warning btn-lg px-4 me-md-2">Give me the technical
                                 details</button>
                         </div>
                     </div>
@@ -150,9 +210,10 @@
         <%- include('partials/footer') %>
 
             <!-- SCRIPTS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
                 crossorigin="anonymous"></script>
+
 
 
 </body>
