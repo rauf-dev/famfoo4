@@ -1,49 +1,71 @@
+
 body {
-  max-width: 1000px;
-  margin: 0 auto;
   min-height: 100vh;
-  background-image: url('./assets/backgrounds/Mataura.svg');
-  /* background-image: url('./assets/backgrounds/Waimakariri.svg'); too colorfull, repeats */
-  margin: 0 auto;
-  padding: 0 1rem;
+  background-color: #F6DC42;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar {
-  opacity: 0.9;
+.hero-logo{
+  min-height: 86vh;
+  position: relative;
 }
 
-.section-homePageHero {
-  /* border: 3px solid rgba(80, 79, 90, 0.5); */
-  border-radius: 15px;
-  background-color: white;
-  box-shadow: 14px 17px 13px -11px rgba(68, 68, 68, 0.37);
-  -webkit-box-shadow: 14px 17px 13px -11px rgba(68, 68, 68, 0.37);
-  /* opacity: 0.9; */
-  
+.arrow-down{
+  position: absolute;
+  bottom: 100px;
+  transform: translateX(-50%)
+}
+@media (min-width: 800px) {
+  .arrow-down{
+    bottom: 150px;
+  }
+}
+@media (min-width: 1200px) {
+  .arrow-down{
+    bottom: 200px;
+  }
+}
+@media (min-width: 1560px) {
+  .arrow-down{
+    bottom: 240px;
+  }
+}
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.hero-features{
+  position: relative;
+  min-height: 86vh;
+  background-color: #273036;
+  color: white;
+}
+.yellow-text{
+  color: #F6DC42;
+}
+.btn-warning{
+  background-color: #F6DC42;
+  border-color: #F6DC42;
 }
 
-/* Used on: practically all sections */
-.section-template {
-  /* background-color: white; */
-  /* border: 1px solid rgba(80, 79, 90, 0.5); */
-  border-radius: 15px;
-  box-shadow: 0 10px 36px 0 rgba(0,0,0,0.16), 0 0 10px  rgba(0,0,0,0.06), 0 10px 36px 0 rgba(0,0,0,0.16);
-  -webkit-box-shadow: 0 10px 36px 0 rgba(0,0,0,0.16), 0 0 10px  rgba(0,0,0,0.06), 0 10px 36px 0 rgba(0,0,0,0.16);;
+footer{
+  min-height: 10vh;
 }
 
 /* Used on: home page */
 .section-template-opaque{
   background-color: white;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 
 /* Used on: AddNewMeal, MealDetails and Suggestion pages */
 .section-template__fullHeightSection{
   padding: 1rem;
-  /* opacity: 1; */
   background: rgba(255, 255, 255, 0.9);
   min-height: 75vh;
-  /* min-height: 85vh; */
   position: relative;
   margin: 0 auto;
 }
@@ -51,8 +73,6 @@ body {
 /* Used on: AddNewMeal, MealDetails and Suggestion pages */
 .section-template__fullHeightSection__oneButton{
   width: 100%;
-  /* position: absolute;
-  bottom: 0; */
 }
 
 /* Used on: GetSuggestion and MealDetails pages */

@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   try {
     console.log('########### ADD NEW MEAL ROUTE ##################')
     console.log('fix so cleanup imagekit temp tags works');
-    findImgTempTagAndDelete();
+    // findImgTempTagAndDelete();
   } catch (error) {
     console.log(error);
   }

@@ -9,8 +9,8 @@ fileField.addEventListener('change', upload);
 const imagekit = new ImageKit({
   publicKey: 'public_sByx+wwcY0EsO9JcZ/zGoCx3vts=',
   urlEndpoint: 'https://ik.imagekit.io/ptrqyxh4ajrm',
-  // authenticationEndpoint: "http://localhost:3005/auth"
-  authenticationEndpoint: 'https://mealorg.herokuapp.com/auth',
+  authenticationEndpoint: "http://localhost:3005/auth"
+  // authenticationEndpoint: 'https://mealorg.herokuapp.com/auth',
 });
 
 function upload(e) {
@@ -26,7 +26,7 @@ function upload(e) {
     },
     function (err, result) {
       if (err) {
-        console.alert('Error in file upload. Error response below');
+        // console.alert('Error in file upload. Error response below');
         console.log(err);
       } else {
         console.log('File uploaded. Success response below');
