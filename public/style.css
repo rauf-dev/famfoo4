@@ -7,7 +7,7 @@ body {
 }
 
 .hero-logo{
-  min-height: 86vh;
+  min-height: 93vh;
   position: relative;
 }
 
@@ -39,7 +39,7 @@ body {
 }
 .hero-features{
   position: relative;
-  min-height: 86vh;
+  min-height: 92vh;
   background-color: #273036;
   color: white;
 }

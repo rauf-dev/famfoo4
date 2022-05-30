@@ -176,7 +176,7 @@
     /* background-color: #273036; */
     background-color: #f6dc42;
     color: white;
-    width: 85%;
+    width: 94%;
     /* height: 100%; */
     height: auto;
     padding: 30px;
@@ -193,7 +193,6 @@
     line-height: 3;
     border-bottom: #777 solid 1px;
     padding-bottom: 10px;
-    margin-bottom: 30px;
   }
   
   .mobile-menu a {
@@ -207,7 +206,8 @@
   } */
   
   .mobile-menu div {
-    margin-top: 20px;
+    margin-top: 1rem;
+    /* margin-top: 20px; */
   }
   
   .mobile-menu div a {
@@ -255,4 +255,7 @@
       margin-right: auto;
       margin-left: auto;
     }
+}
+.custom-navbar__mobile-menu__button{
+  width: 80%;
 }
