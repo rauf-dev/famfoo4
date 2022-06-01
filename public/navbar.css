@@ -171,13 +171,10 @@
   /* Mobile Menu */
   .mobile-menu {
     position: fixed;
-    /* top: 85px; */
     right: 0;
-    /* background-color: #273036; */
-    background-color: #f6dc42;
+    background-color: #001220;
     color: white;
-    width: 94%;
-    /* height: 100%; */
+    width: 100%;
     height: auto;
     padding: 30px;
     transition: all 0.3s;
@@ -198,7 +195,7 @@
   .mobile-menu a {
     text-decoration: none;
     font-size: 20px;
-    color: black;
+    color: white;
   }
   
   /* .mobile-menu a:hover {
@@ -224,7 +221,7 @@
     overflow: hidden;
   }
 
-  @media (max-width: 905px) {
+  @media (max-width: 920px) {
     .hamburger {
       display: block;
     }
@@ -260,8 +257,15 @@
   width: 80%;
 }
 .mobile-menu-bgimage {
-  background-image: url('./assets/blob-scene-haikei.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+.mobile-menu-bgimage-svg{
+  position: relative;
+  display: block;
+  object-fit: cover;
 }
