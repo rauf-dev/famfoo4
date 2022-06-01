@@ -259,3 +259,9 @@
 .custom-navbar__mobile-menu__button{
   width: 80%;
 }
+.mobile-menu-bgimage {
+  background-image: url('./assets/blob-scene-haikei.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
