@@ -43,9 +43,6 @@ body {
   border-color: #F6DC42;
 }
 
-footer{
-  min-height: 10vh;
-}
 
 /* Used on: home page */
 .section-template-opaque{
@@ -58,7 +55,7 @@ footer{
   padding: 1rem;
   background: #273036;
   color: white;
-  min-height: 75vh;
+  min-height: 100vh;
   position: relative;
   margin: 0 auto;
 }
@@ -163,3 +160,9 @@ position: relative;
   }
 }
 
+.footer{
+  min-height: 50px;
+  max-width: 1440px;
+  color:#273036;
+
+}
