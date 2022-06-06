@@ -87,9 +87,7 @@ body {
 .form-text {
   margin-top: 0;
 }
-.form-label {
-  margin-bottom: 0;
-}
+
 .addNewMealImage-demo {
   height: 350px;
   object-fit: cover;

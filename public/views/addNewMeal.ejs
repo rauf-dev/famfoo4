@@ -17,7 +17,7 @@
             <section class="section-template section-template__fullHeightSection">
                 <!-- <section class="section-template section-addMeal-addMealForm"> -->
                 <div class="template-single-col mx-auto">
-                    <nav class="small mt-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <nav class="small my-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Add New Meal</li>
@@ -25,31 +25,25 @@
                     </nav>
 
                     <h2 class="mb-4">Add New Meal</h2>
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label class="form-label" for="image_uploads">Take a photo or select existing</label>
-                        <div id="mealImageHelp" class="form-text">A picture is required.</div>
                         <input type="file" class="form-control" id="image_uploads" name="image_uploads"
                             accept="image/*">
                     </div>
                     <form action="/meals/new/savemeal" method="POST" id="uploadMulterForm"
                         class="needs-validation newMealForm">
-                        <div class="mb-3 div-mealName">
+                        <div class="mb-4 div-mealName">
                             <label for="mealName" class="form-label">Meal Name</label>
-                            <div id="mealNameHelp" class="form-text">A name is required. Short name of the meal.</div>
                             <input type="text" class="form-control" id="mealName" name="mealName"
                                 aria-describedby="inputMealName" required>
                         </div>
-                        <div class="mb-3 divMealDescription">
+                        <div class="mb-4 divMealDescription">
                             <label for="mealDesription" class="form-label">Short Description</label>
-                            <div id="mealDescriptionHelp" class="form-text">Optional field.</div>
                             <textarea id="mealDescription" class="form-control" aria-label="meal description field"
                                 name="mealDesription"></textarea>
 
                         </div>
                         <label for="mealCategory" class="form-label">Select Meal Category</label>
-                        <div id="div-mealCategory" class="form-text mealCategoryHelp">Mandatory field. Select one
-                            category.
-                        </div>
                         <div class="form-check radioSelectsMealCategory">
                             <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryMains"
                                 value="mains" checked>
