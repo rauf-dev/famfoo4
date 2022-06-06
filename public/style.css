@@ -93,10 +93,7 @@ body {
   object-fit: cover;
 }
 
-/* EDIT MEAL PAGE */
-.section-editmeal-hiddenform{
-  /* display: none; */
-}
+
 
 .section-editmeal .section-template__fullHeightSection__oneButton{
 position: relative;
@@ -163,4 +160,13 @@ position: relative;
   max-width: 1440px;
   color:#273036;
 
+}
+.meal-details-page{
+  background-color: #273036;
+  color: white;
+  min-height: 100vh;
+}
+
+.bg-sanadark{
+  background-color: #273036;
 }
