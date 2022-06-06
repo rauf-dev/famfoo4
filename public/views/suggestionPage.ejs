@@ -8,47 +8,49 @@
 <body>
     <%- include('partials/navbar') %>
 
-        <!-- BREADCRUMB -->
-        <nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Suggestion</li>
-            </ol>
-        </nav>
-
-        <!-- SUGGESTION -->
-        <section class="section-template section-template__fullHeightSection text-center">
-            <h2 class="mb-4">Get A Suggestion</h2>
-            <div class="mb-4 text-center sectionDivTemplate-singleImageDiv">
-                <img src="<%= `${randomMeal.imageLocation}?tr=h-500` %>"
-                    class="sectionDivTemplate-singleImage rounded img-fluid" alt="image of suggested meal">
+        <div class="container-fluid bg-sanadark">
+            <!-- BREADCRUMB -->
+            <div class="container px-4 pt-2 mt-5">
+                <nav class="small mt-2" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Suggestion</li>
+                    </ol>
+                </nav>
             </div>
+            <!-- MEAL SUGGESTION -->
+            <div class="container col-xxl-8 px-4 py-2 meal-details-page">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <img src="<%= `${randomMeal.imageLocation}` %>" class="d-block mx-lg-auto img-fluid rounded"
+                            alt="Bootstrap Themes" loading="lazy" width="700" height="500">
+                    </div>
 
-            <div class="suggestionPage-suggestionMealData mb-4">
-                <h4>
-                    <%= randomMeal.mealName %>
-                </h4>
-                <p>
-                    <%= randomMeal.mealDescription %>
-                </p>
-                <p class="small text-muted suggestionPage-suggestionMealData-category">
-                    <%= randomMeal.mealCategory %>
-                </p>
+                    <div class="col-lg-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">
+                            <%= randomMeal.mealName %>
+                        </h1>
+                        <p class="lead">
+                            <%= randomMeal.mealDescription %>
+                        </p>
+                        <p class="small">
+                            <%= randomMeal.mealCategory %>
+                        </p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href=" /meals/meal/<%= randomMeal.id %>  " class="btn btn-outline-warning btn-lg px-4 me-md-2"> View Meal
+                            </a>
+                            <a href="/suggestion" class="btn btn-warning btn-lg px-4 me-md-2"> Next Suggestion
+                            </a>
+                        </div>
+                    </div>
 
+                </div>
             </div>
-            <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
-                <!-- <div class="mb-4 text-center suggestionPage-suggestionButtonDiv"> -->
-                <a href="/suggestion" class="btn btn-primary btn-lg px-4 me-md-2">Next Suggestion</button></a>
-            </div>
-        </section>
-
+        </div>
         <!-- FOOTER -->
         <%- include('partials/footer') %>
-
             <!-- SCRIPTS -->
             <%- include('partials/scripts') %>
-
-
 </body>
 
 </html>
