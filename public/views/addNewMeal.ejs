@@ -7,31 +7,29 @@
 
 <body>
     <%- include('partials/navbar') %>
-
-        <!-- MESSAGE -->
-        <!-- BREADCRUMB -->
-
-        <%- messages('messages', locals) %>
-
-            <!-- ADD NEW MEAL FORM -->
-            <section class="section-template section-template__fullHeightSection">
-                <!-- <section class="section-template section-addMeal-addMealForm"> -->
-                <div class="template-single-col mx-auto">
-                    <nav class="small my-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Add New Meal</li>
-                        </ol>
-                    </nav>
-
+        <!-- ADD NEW MEAL FORM -->
+        <section class="section-template section-template__fullHeightSection">
+            <!-- <section class="section-template section-addMeal-addMealForm"> -->
+            <div class="template-single-col mx-auto">
+                <!-- BREADCRUMB -->
+                <nav class="small my-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add New Meal</li>
+                    </ol>
+                </nav>
+                <!-- MESSAGE -->
+                <%- messages('messages', locals) %>
                     <h2 class="mb-4">Add New Meal</h2>
                     <div class="mb-4">
+                        <!-- Server side validation -->
                         <label class="form-label" for="image_uploads">Take a photo or select existing</label>
                         <input type="file" class="form-control" id="image_uploads" name="image_uploads"
                             accept="image/*">
                     </div>
                     <form action="/meals/new/savemeal" method="POST" id="uploadMulterForm"
                         class="needs-validation newMealForm">
+                        <!-- Browser and server side validation -->
                         <div class="mb-4 div-mealName">
                             <label for="mealName" class="form-label">Meal Name</label>
                             <input type="text" class="form-control" id="mealName" name="mealName"
@@ -80,22 +78,21 @@
                                 hidden>
                         </div>
                     </form>
-                </div>
+            </div>
 
-            </section>
+        </section>
 
-            <!-- FOOTER -->
-            <%- include('partials/footer') %>
+        <!-- FOOTER -->
+        <%- include('partials/footer') %>
 
-                <!-- SCRIPTS -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-                    crossorigin="anonymous"></script>
-                <script type="text/javascript"
-                    src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
-                <script src="/scripts/imageUploadImagekit.js"></script>
+            <!-- SCRIPTS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                crossorigin="anonymous"></script>
+            <script type="text/javascript" src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
+            <script src="/scripts/imageUploadImagekit.js"></script>
 
-                <%- include('partials/scripts') %>
+            <%- include('partials/scripts') %>
 </body>
 
 </html>
