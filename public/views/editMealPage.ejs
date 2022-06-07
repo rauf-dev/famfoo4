@@ -7,107 +7,111 @@
 
 <body>
     <%- include('partials/navbar') %>
-        <%- messages('messages', locals) %>
+        <div class="container-fluid bg-sanadark">
             <!-- BREADCRUMB -->
-            <nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">home</a></li>
-                    <li class="breadcrumb-item"><a href="/meals/category/<%= meal.mealCategory %>?page=1&limit=5">
-                            <%= meal.mealCategory %>
-                        </a></li>
-                    <li class="breadcrumb-item"><a href="/meals/meal/<%= meal.id %>">
-                            <%= meal.mealName %>
-                        </a></li>
-                    <li class="breadcrumb-item active" aria-current="page">edit meal </li>
-                </ol>
-            </nav>
-
-            <!-- MESSAGE -->
+            <div class="container px-4 pt-2 mt-5">
+                <nav class="small mt-2" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">home</a></li>
+                        <li class="breadcrumb-item"><a href="/meals/category/<%= meal.mealCategory %>?page=1&limit=5">
+                                <%= meal.mealCategory %>
+                            </a></li>
+                        <li class="breadcrumb-item"><a href="/meals/meal/<%= meal.id %>">
+                                <%= meal.mealName %>
+                            </a></li>
+                        <li class="breadcrumb-item active" aria-current="page">edit meal </li>
+                    </ol>
+                </nav>
+            </div>
             <%- messages('messages', locals) %>
-
-                <!-- EDIT MEAL FORM -->
-                <section
-                    class="section-template section-template__fullHeightSection section-editmeal section-editmeal-hiddenform">
-                    <h2 class="mb-4">Edit <%= meal.mealName %>
-                    </h2>
-                    <!-- add current meal image here -->
-                    <div class="mb-4 text-center sectionDivTemplate-singleImageDiv">
-                        <img src="<%=`${meal.imageLocation}`%> "
-                            class="sectionDivTemplate-singleImage rounded img-fluid"
-                            alt="image of the meal <%= meal.mealName %>">
+                <!-- EDIT MEAL LAYOUT -->
+                <div class="container col-xxl-8 px-4 py-2 meal-details-page">
+                    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                        <div class="col-10 col-sm-8 col-lg-6">
+                            <img src="<%=`${meal.imageLocation}`%> " class="d-block mx-lg-auto img-fluid rounded"
+                                alt="Bootstrap Themes" loading="lazy" width="700" height="500">
+                        </div>
+                        <div class="col-lg-6">
+                            <h1 class="display-5 fw-bold lh-1 mb-3">
+                                Edit <%= meal.mealName %>
+                            </h1>
+                            <div class="mb-3">
+                                <label class="form-label" for="image_uploads">Change meal image</label>
+                                <input type="file" class="form-control" id="image_uploads" name="image_uploads"
+                                    accept="image/*">
+                            </div>
+                            <form action="/meals/edit/<%= meal.id %>" method="POST" id="uploadMulterForm"
+                                class="needs-validation newMealForm">
+                                <div class="mb-3 div-mealName">
+                                    <label for="mealName" class="form-label">Edit Meal Name</label>
+                                    <input type="text" class="form-control" id="mealName" name="mealName"
+                                        aria-describedby="inputMealName" value="<%= meal.mealName %>" required>
+                                </div>
+                                <div class="mb-3 divMealDescription">
+                                    <label for="mealDesription" class="form-label">Edit Description</label>
+                                    <textarea id="mealDescription" class="form-control"
+                                        aria-label="meal description field" name="mealDescription"></textarea>
+                                </div>
+                                <label for="mealCategory" class="form-label">Change Meal Category</label>
+                                <div class="form-check radioSelectsMealCategory">
+                                    <input class="form-check-input" type="radio" name="mealCategory"
+                                        id="mealCategoryMains" value="mains">
+                                    <label class="form-check-label" for="mealCategoryMains">
+                                        Mains
+                                    </label>
+                                </div>
+                                <div class="form-check radioSelectsMealCategory">
+                                    <input class="form-check-input" type="radio" name="mealCategory"
+                                        id="mealCategoryBreakfast" value="breakfast">
+                                    <label class="form-check-label" for="mealCategoryBreakfast">
+                                        Breakfast
+                                    </label>
+                                </div>
+                                <div class="form-check radioSelectsMealCategory mb-4">
+                                    <input class="form-check-input" type="radio" name="mealCategory"
+                                        id="mealCategorySnacks" value="snacks">
+                                    <label class="form-check-label" for="mealCategorySnacks">
+                                        Snacks
+                                    </label>
+                                </div>
+                                <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
+                                    <input class="btn btn-primary btn-lg px-4 me-md-2" id="submitNewMeal" type="submit"
+                                        value="Submit" />
+                                    <a href="/meals/edit/<%= meal.id %>" class="btn btn-light btn-lg px-4 me-md-2">Reset
+                                        Form
+                                    </a>
+                                </div>
+                                <!-- results from imagekit upload to transit to db -->
+                                <div class="hiddenInputs">
+                                    <input type="hidden" class="hiddenMealDescription" id="hiddenMealDescription"
+                                        name="hiddenMealDescription" value="<%= meal.mealDescription %>">
+                                    <input type="hidden" class="hiddenMealCategorySnacks" id="hiddenMealCategorySnacks"
+                                        name="hiddenMealCategorySnacks" value="<%= meal.mealCategory %> ">
+                                    <input type="hidden" name="imageName" class="imageName" id="imageName">
+                                    <input type="hidden" name="imageLocation" class="imageLocation" id="imageLocation">
+                                    <input type="hidden" name="imageThumbnail" class="imageThumbnail"
+                                        id="imageThumbnail">
+                                    <input type="hidden" name="imagekitImageId" class="imagekitImageId"
+                                        id="imagekitImageId">
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="image_uploads">Change meal image</label>
-                        <input type="file" class="form-control" id="image_uploads" name="image_uploads"
-                            accept="image/*">
-                    </div>
-                    <form action="/meals/edit/<%= meal.id %>" method="POST" id="uploadMulterForm"
-                        class="needs-validation newMealForm">
-                        <div class="mb-3 div-mealName">
-                            <label for="mealName" class="form-label">Edit Meal Name</label>
-                            <input type="text" class="form-control" id="mealName" name="mealName"
-                                aria-describedby="inputMealName" value="<%= meal.mealName %>" required>
-                        </div>
-                        <div class="mb-3 divMealDescription">
-                            <label for="mealDesription" class="form-label">Edit Description</label>
-                            <textarea id="mealDescription" class="form-control" aria-label="meal description field"
-                                name="mealDescription"></textarea>
-                        </div>
-                        <label for="mealCategory" class="form-label">Change Meal Category</label>
-                        </div>
-                        <div class="form-check radioSelectsMealCategory">
-                            <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryMains"
-                                value="mains">
-                            <label class="form-check-label" for="mealCategoryMains">
-                                Mains
-                            </label>
-                        </div>
-                        <div class="form-check radioSelectsMealCategory">
-                            <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryBreakfast"
-                                value="breakfast">
-                            <label class="form-check-label" for="mealCategoryBreakfast">
-                                Breakfast
-                            </label>
-                        </div>
-                        <div class="form-check radioSelectsMealCategory mb-4">
-                            <input class="form-check-input" type="radio" name="mealCategory" id="mealCategorySnacks"
-                                value="snacks">
-                            <label class="form-check-label" for="mealCategorySnacks">
-                                Snacks
-                            </label>
-                        </div>
-                        <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
-                            <input class="btn btn-primary btn-lg px-4 me-md-2" id="submitNewMeal" type="submit"
-                                value="Submit" />
-                            <a href="/meals/edit/<%= meal.id %>" class="btn btn-light btn-lg px-4 me-md-2">Reset Form
-                            </a>
-                        </div>
-                        <!-- results from imagekit upload to transit to db -->
-                        <div class="hiddenInputs">
-                            <input type="hidden" class="hiddenMealDescription" id="hiddenMealDescription"
-                                name="hiddenMealDescription" value="<%= meal.mealDescription %>">
-                            <input type="hidden" class="hiddenMealCategorySnacks" id="hiddenMealCategorySnacks"
-                                name="hiddenMealCategorySnacks" value="<%= meal.mealCategory %> ">
-                            <input type="hidden" name="imageName" class="imageName" id="imageName">
-                            <input type="hidden" name="imageLocation" class="imageLocation" id="imageLocation">
-                            <input type="hidden" name="imageThumbnail" class="imageThumbnail" id="imageThumbnail">
-                            <input type="hidden" name="imagekitImageId" class="imagekitImageId" id="imagekitImageId">
-                        </div>
-                    </form>
-                </section>
+                </div>
+        </div>
 
-                <!-- FOOTER -->
-                <%- include('partials/footer') %>
+        <!-- FOOTER -->
+        <%- include('partials/footer') %>
 
-                    <!-- SCRIPTS -->
-                    <%- include('partials/scripts') %>
-                    <script type="text/javascript"
-                        src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
-                    <script src="/scripts/imageUploadImagekit.js"></script>
-                    <script src="/scripts/editMealScript.js"></script>
-                    <script>
-                        console.log("Hello, edit meal page");
-                    </script>
+            <!-- SCRIPTS -->
+            <%- include('partials/scripts') %>
+                <script type="text/javascript"
+                    src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
+                <script src="/scripts/imageUploadImagekit.js"></script>
+                <script src="/scripts/editMealScript.js"></script>
+                <script>
+                    console.log("Hello, edit meal page");
+                </script>
 
 </body>
 
