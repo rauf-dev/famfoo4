@@ -188,3 +188,13 @@ position: relative;
 .gallery-container{
   max-width: 1440px;
 }
+.danger-zone{
+  /* background-color: var(--sanabgblack); */
+    border-color: #454f59;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+}
+/* .danger-zone-title{
+  border-bottom: 1px solid #454f59;
+} */
