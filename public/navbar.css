@@ -17,7 +17,8 @@
 
 .navbar {
     width: 100%;
-    height: auto;
+    height: 48px;
+    /* height: auto; */
     background-color: #F6DC42;
     padding: 0px;
   }
@@ -90,7 +91,7 @@
 
 #navigation-bar-scroll {
     position: fixed;
-    height: 60px;
+    height: 48px;
     left: 0;
     right: 0;
     top: 0;
