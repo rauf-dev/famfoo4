@@ -185,3 +185,6 @@ position: relative;
 .bg-sanadark{
   background-color: var(--sanabgblack);
 }
+.gallery-container{
+  max-width: 1440px;
+}
