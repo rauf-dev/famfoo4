@@ -7,40 +7,50 @@
 
 <body>
     <%- include('partials/navbar') %>
-    <%- messages('messages', locals) %>
-<!-- BREADCRUMB -->
-<nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">home</a></li>
-      <li class="breadcrumb-item"><a href="/meals/category/<%= meal.mealCategory %>"><%= meal.mealCategory %> </a></li>
-      <li class="breadcrumb-item active" aria-current="page">meal details</li>
-    </ol>
-  </nav>
-
-        <!-- HERO -->
-        <section class="section-template section-template__fullHeightSection text-center">
-            <div class="mb-4 text-center sectionDivTemplate-singleImageDiv">
-                <img src="<%= `${meal.imageLocation}` %> "
-                        class="sectionDivTemplate-singleImage rounded img-fluid" alt="...">
+            <div class="container-fluid bg-sanadark">
+                <!-- BREADCRUMB -->
+                <div class="container col-xxl-8 px-4 pt-2 mt-5">
+                    <nav class="small mt-2" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">home</a></li>
+                            <li class="breadcrumb-item"><a href="/meals/category/<%= meal.mealCategory %>">
+                                    <%= meal.mealCategory %>
+                                </a></li>
+                            <li class="breadcrumb-item active" aria-current="page">meal details</li>
+                        </ol>
+                    </nav>
+                </div>
+                <%- messages('messages', locals) %>
+                <!-- MEAL DETAILS LAYOUT -->
+                <div class="container col-xxl-8 px-4 py-2 meal-details-page">
+                    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                        <div class="col-10 col-sm-8 col-lg-6">
+                            <img src="<%= `${meal.imageLocation}` %>" class="d-block mx-lg-auto img-fluid rounded"
+                                alt="Bootstrap Themes" loading="lazy" width="700" height="500">
+                        </div>
+                        <div class="col-lg-6">
+                            <h1 class="display-5 fw-bold lh-1 mb-3">
+                                <%= meal.mealName %>
+                            </h1>
+                            <p class="lead">
+                                <%= meal.mealDescription %>
+                            </p>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <a href="/meals/edit/<%= meal.id %> " class="btn btn-warning btn-lg px-4 me-md-2"> Edit
+                                    Meal </a>
+                                <!-- <a href="/meals/delete/<%= meal.id %>" class="btn btn-outline-danger btn-lg px-4">Delete
+                                    Meal</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="mb-4">
-                <h4><%= meal.mealName %> </h4>
-                <p> <%= meal.mealDescription %>  </p>
-                <p class="small text-muted"> <%= meal.mealCategory %>  </p>
-            </div>
-            <div class="mb-4 text-center section-template__fullHeightSection__oneButton">
-                <a href="/meals/edit/<%= meal.id %> " class="btn btn-primary btn-sm px-4 me-md-2">Edit Meal</button></a>
-                <a href="/meals/delete/<%= meal.id %>" class="btn btn-outline-danger btn-sm px-4 me-md-2">Delete Meal</button></a>
-            </div>
-        </section>
+            <!-- FOOTER -->
+            <%- include('partials/footer') %>
 
-        <!-- FOOTER -->
-        <%- include('partials/footer') %>
-
-            <!-- SCRIPTS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
+                <!-- SCRIPTS -->
+                <%- include('partials/scripts') %>
 
 </body>
 

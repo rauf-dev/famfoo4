@@ -7,92 +7,107 @@
 
 <body>
     <%- include('partials/navbar') %>
+        <div class="container-fluid bg-sanadark">
+            <!-- BREADCRUMB -->
+            <div class="container col-xxl-8 px-4 pt-2 mt-5">
+                <nav class="small mt-2" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add New Meal</li>
+                    </ol>
+                </nav>
+            </div>
+            <%- messages('messages', locals) %>
+                <!-- ADD NEW MEAL LAYOUT -->
+                <div class="container col-xxl-8 px-4 py-2 meal-details-page">
+                    <div class="row py-5">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">
+                            Add new meal
+                        </h1>
+                    </div>
+                    <div class="row flex-lg-row align-items-center g-5">
+                        <div class="col-lg-6 align-self-start">
+                            <!-- <div class="col-sm-8 col-lg-6"> -->
+                            <!-- <div class="col-10 col-sm-8 col-lg-6"> -->
 
-        <!-- BREADCRUMB -->
-        <nav class="small" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Add New Meal</li>
-            </ol>
-        </nav>
+                            <div>
+                                <!-- TBD: insert preview of image to be uploaded here -->
+                            </div>
+                            <!-- Server side validation -->
+                            <label class="form-label" for="image_uploads">Take a photo or select existing</label>
+                            <input type="file" class="form-control" id="image_uploads" name="image_uploads"
+                                accept="image/*">
+                        </div>
+                        <div class="col-lg-6">
+                            <form action="/meals/new/savemeal" method="POST" id="uploadMulterForm"
+                                class="needs-validation newMealForm">
+                                <!-- Browser and server side validation -->
+                                <div class="mb-4 div-mealName">
+                                    <label for="mealName" class="form-label">Meal Name</label>
+                                    <input type="text" class="form-control" id="mealName" name="mealName"
+                                        aria-describedby="inputMealName" required>
+                                </div>
+                                <div class="mb-4 divMealDescription">
+                                    <label for="mealDesription" class="form-label">Short Description</label>
+                                    <textarea id="mealDescription" class="form-control"
+                                        aria-label="meal description field" name="mealDesription"></textarea>
 
-        <!-- MESSAGE -->
-        <%- messages('messages', locals) %>
+                                </div>
+                                <label for="mealCategory" class="form-label">Select Meal Category</label>
+                                <div class="form-check radioSelectsMealCategory">
+                                    <input class="form-check-input" type="radio" name="mealCategory"
+                                        id="mealCategoryMains" value="mains" checked>
+                                    <label class="form-check-label" for="mealCategoryMains">
+                                        Mains
+                                    </label>
+                                </div>
+                                <div class="form-check radioSelectsMealCategory">
+                                    <input class="form-check-input" type="radio" name="mealCategory"
+                                        id="mealCategoryBreakfast" value="breakfast">
+                                    <label class="form-check-label" for="mealCategoryBreakfast">
+                                        Breakfast
+                                    </label>
+                                </div>
+                                <div class="form-check radioSelectsMealCategory pb-4">
+                                    <input class="form-check-input" type="radio" name="mealCategory"
+                                        id="mealCategoryBreakfast" value="snacks">
+                                    <label class="form-check-label" for="mealCategoryBreakfast">
+                                        Snacks
+                                    </label>
+                                </div>
+                                <div class="pb-4 pt-4 text-center section-template__fullHeightSection__oneButton">
+                                    <input class="btn btn-warning btn-lg px-4 me-md-2" id="submitNewMeal" type="submit"
+                                        value="Submit" />
+                                    <a href="/meals/newMealPage" class="btn btn-warning btn-lg px-4 me-md-2">Reset Form
+                                    </a>
+                                </div>
+                                <!-- results from imagekit upload to transit to db -->
+                                <div class="hiddenInputs">
+                                    <input type="text" name="imageName" class="imageName" id="imageName" hidden>
+                                    <input type="text" name="imageLocation" class="imageLocation" id="imageLocation"
+                                        hidden>
+                                    <input type="text" name="imageThumbnail" class="imageThumbnail" id="imageThumbnail"
+                                        hidden>
+                                    <input type="text" name="imagekitImageId" class="imagekitImageId"
+                                        id="imagekitImageId" hidden>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
-            <!-- ADD NEW MEAL FORM -->
-            <section class="section-template section-template__fullHeightSection">
-                <!-- <section class="section-template section-addMeal-addMealForm"> -->
-                <h2 class="mb-4">Add New Meal</h2>
-                <div class="mb-3">
-                    <label class="form-label" for="image_uploads">Take a photo or select existing</label>
-                    <div id="mealImageHelp" class="form-text">A picture is required.</div>
-                    <input type="file" class="form-control" id="image_uploads" name="image_uploads" accept="image/*">
                 </div>
-                <form action="/meals/new/savemeal" method="POST" id="uploadMulterForm"
-                    class="needs-validation newMealForm">
-                    <div class="mb-3 div-mealName">
-                        <label for="mealName" class="form-label">Meal Name</label>
-                        <div id="mealNameHelp" class="form-text">A name is required. Short name of the meal.</div>
-                        <input type="text" class="form-control" id="mealName" name="mealName"
-                            aria-describedby="inputMealName" required>
-                    </div>
-                    <div class="mb-3 divMealDescription">
-                        <label for="mealDesription" class="form-label">Short Description</label>
-                        <div id="mealDescriptionHelp" class="form-text">Optional field.</div>
-                        <textarea id="mealDescription" class="form-control" aria-label="meal description field"
-                            name="mealDesription"></textarea>
+        </div>
+        <!-- FOOTER -->
+        <%- include('partials/footer') %>
 
-                    </div>
-                    <label for="mealCategory" class="form-label">Select Meal Category</label>
-                    <div id="div-mealCategory" class="form-text mealCategoryHelp">Mandatory field. Select one category.
-                    </div>
-                    <div class="form-check radioSelectsMealCategory">
-                        <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryMains"
-                            value="mains" checked>
-                        <label class="form-check-label" for="mealCategoryMains">
-                            Mains
-                        </label>
-                    </div>
-                    <div class="form-check radioSelectsMealCategory">
-                        <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryBreakfast"
-                            value="breakfast">
-                        <label class="form-check-label" for="mealCategoryBreakfast">
-                            Breakfast
-                        </label>
-                    </div>
-                    <div class="form-check radioSelectsMealCategory pb-4">
-                        <input class="form-check-input" type="radio" name="mealCategory" id="mealCategoryBreakfast"
-                            value="snacks">
-                        <label class="form-check-label" for="mealCategoryBreakfast">
-                            Snacks
-                        </label>
-                    </div>
-                    <div class="pb-4 pt-4 text-center section-template__fullHeightSection__oneButton">
-                        <input class="btn btn-primary btn-lg px-4 me-md-2" id="submitNewMeal" type="submit"
-                            value="Submit" />
-                        <a href="/meals/newMealPage" class="btn btn-light btn-lg px-4 me-md-2">Reset Form
-                        </a>
-                    </div>
-                    <!-- results from imagekit upload to transit to db -->
-                    <div class="hiddenInputs">
-                        <input type="text" name="imageName" class="imageName" id="imageName" hidden>
-                        <input type="text" name="imageLocation" class="imageLocation" id="imageLocation" hidden>
-                        <input type="text" name="imageThumbnail" class="imageThumbnail" id="imageThumbnail" hidden>
-                        <input type="text" name="imagekitImageId" class="imagekitImageId" id="imagekitImageId" hidden>
-                    </div>
-                </form>
-            </section>
+            <!-- SCRIPTS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                crossorigin="anonymous"></script>
+            <script type="text/javascript" src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
+            <script src="/scripts/imageUploadImagekit.js"></script>
 
-            <!-- FOOTER -->
-            <%- include('partials/footer') %>
-
-                <!-- SCRIPTS -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-                <script type="text/javascript"
-                    src="https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"></script>
-                <script src="/scripts/imageUploadImagekit.js"></script>
-
-
+            <%- include('partials/scripts') %>
 </body>
 
 </html>

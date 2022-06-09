@@ -1,38 +1,88 @@
-<nav class="navbar navbar-expand-lg  mb-4">
-    <div class="container-fluid ">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="/">SANAMEALS.COM</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+<nav id="navigation-bar-scroll" class="navigation-is-visible">
+    <!-- <header id="navigation-bar-scroll" class="navigation-is-hidden"> -->
+    <nav class="navbar" id="navbar-black-mobile">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="/">
+                    <img src="/assets/dinner-128.png" alt="sanameals.com" />
+                </a>
+            </div>
+            <ul class="navbar-nav-left">
+                <li class="activeState"><a href="/">Home</a></li>
+                <li class="activeState"><a href="/meals/category/mains?page=1&limit=5">Mains</a></li>
+                <li class="activeState">
+                    <a href="/meals/category/breakfast?page=1&limit=5">Breakfast</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/meals/category/mains?page=1&limit=5">Mains</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/meals/category/breakfast?page=1&limit=5">Breakfast</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/meals/category/snacks?page=1&limit=5">Snacks</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/meals/suggestion">Suggestion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/meals/newMealPage">Add Meal</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/test">test</a>
+                <li class="activeState">
+                    <a href="/meals/category/snacks?page=1&limit=5">Snacks</a>
                 </li>
             </ul>
-            <!-- <div class="col-md-3">
-                <button type="button" class="btn btn-outline-warning me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
-            </div> -->
+            <ul class="navbar-nav-right">
+                <li>
+                    <button onclick="window.location.href='/suggestion'" class="btn btn-dark">
+                        Get a Suggestion
+                    </button>
+                </li>
+                <li>
+                    <button onclick="window.location.href='/meals/newMealPage'" class="btn btn-dark">
+                        Add New Meal
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <button type="button" class="hamburger" id="menu-btn">
+                <span class="hamburger-top" id="hamburgerTopX"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom" id="hamburgerBottomX"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden" id="menu">
+        <ul>
+            <li class="mobile-menu-li">
+                <a class="active-navPage activeState" href="/">Home</a>
+            </li>
+            <li class="mobile-menu-li"><a class="active-navPage activeState"
+                    href="/meals/category/mains?page=1&limit=5">Mains</a></li>
+            <li class="mobile-menu-li">
+                <a class="active-navPage activeState" href="/meals/category/breakfast?page=1&limit=5">Breakfast</a>
+            </li>
+            <li class="mobile-menu-li">
+                <a class="active-navPage activeState" href="/meals/category/snacks?page=1&limit=5">Snacks</a>
+            </li>
+            <li class="mobile-menu-li">
+                <a class="active-navPage activeState" href="/meals/newMealPage">Add New Meal</a>
+            </li>
+            <li class="mobile-menu-li">
+                <a class="active-navPage activeState" href="/meals/category/snacks?page=1&limit=5">Meal Planner</a>
+            </li>
+            <li class="mobile-menu-li">
+                <a class="active-navPage activeState" href="/meals/suggestion">Get
+                    Suggestion</a>
+            </li>
+            <!-- <li class="mobile-menu-li">
+                    <a class="active-navPage activeState" href="/meals/category/snacks?page=1&limit=5">Snacks</a>
+                </li> -->
+        </ul>
+        <div class="mobile-menu-bottom">
+            <ul>
+                <li>
+                    <button onclick="window.location.href='/suggestion'"
+                        class="custom-navbar__mobile-menu__button btn btn-warning btn-lg">
+                        Sign up
+                    </button>
+                </li>
+                <li>
+                    <button onclick="window.location.href='/suggestion'"
+                        class="custom-navbar__mobile-menu__button btn btn-outline-light btn">
+                        Sign in
+                    </button>
+                </li>
+                <!-- <a href="http://">Sign in</a> -->
+            </ul>
         </div>
     </div>
 </nav>

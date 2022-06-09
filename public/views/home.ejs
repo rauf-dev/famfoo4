@@ -6,218 +6,244 @@
 </head>
 
 <body>
-    <%- include('partials/navigation') %>
+    <%- include('partials/navbar') %>
 
-            <!-- CENTERED HERO -->
-            <div class="hero-logo  py-5 mt-5 text-center">
-                <img class="d-block mx-auto mb-4" src="/assets/dinner-256.svg" alt="" width="128" height="128">
-                <h1 class="logo-title display-3 fw-bold px-4">SANAMEALS.COM</h1>
-                <p class="lead mb-4 px-4">simplify meal planning</p>
+        <!-- TEST NEW CENTERED HERO -->
+        <section class="hero-logo-section">
+            <div class="hero-logo-container container">
+                <div class="hero-logo row align-items-center justify-content-center">
+                    <div class="col text-center">
+                        <img class="d-block mx-auto mb-2" src="/assets/dinner-256.svg" alt="" width="128" height="128">
+                        <h1 class="logo-title display-3 fw-bold px-4">SANAMEALS.COM</h1>
+                        <p class="lead mb-4 px-4">simplify meal planning</p>
+                    </div>
+                </div>
                 <img class="arrow-down" src="https://img.icons8.com/ios-filled/100/000000/down--v2.png" />
-                <img class="wave-bottom" src="/assets/wave-black1.svg">
             </div>
+            <div class="custom-shape-divider-bottom-1654005556">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
 
+        <!-- FEATURES LIST -->
+        <section class="hero-features">
+            <div class="hero-logo container text-center">
+                <div class="px-5 ">
+                    <h2 class="display-3 fw-semibold fst-italic">powerful <span class="yellow-text">
+                            meal organizing and planning
+                        </span> for our family</h2>
 
-            <!-- FEATURES LIST -->
-            <section class="hero-features">
-                <div class="hero-logo container text-center">
-                    <div class="px-5 ">
-                        <h2 class="display-3 fw-semibold fst-italic">powerful <span class="yellow-text">
-                                meal organizing and planning
-                            </span> for our family</h2>
-
-                    </div>
-                    <!-- features list -->
-                    <div class="container ">
-                        <div class="row g-4 py-5 px-5 row-cols-1 row-cols-lg-3">
-                            <div class="col d-flex align-items-start">
-                                <div
-                                    class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                                    <img src="/assets/tick-self-made36x36.svg" alt="">
-                                </div>
-                                <div>
-                                    <h2>Organise meals</h2>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div
-                                    class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                                    <img src="/assets/tick-self-made36x36.svg" alt="">
-                                </div>
-                                <div>
-
-                                    <h2>Get suggestions</h2>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div
-                                    class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                                    <img src="/assets/tick-self-made36x36.svg" alt="">
-                                </div>
-                                <div>
-                                    <h2>Add personal ratings</h2>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div
-                                    class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                                    <img src="/assets/tick-self-made36x36.svg" alt="">
-                                </div>
-                                <div>
-
-                                    <h2>Whats in my fridge?</h2>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div
-                                    class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                                    <img src="/assets/tick-self-made36x36.svg" alt="">
-                                </div>
-                                <div>
-                                    <h2>Weekly meal planner</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  -->
                 </div>
-                <img class="wave-bottom" src="/assets/wave-white1.svg">
-            </section>
-
-            <!-- MAINS -->
-            <section class="section-template section-template-opaque section-home-mains">
-                <div class="container col-xxl-8 px-4 py-5">
-                    <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
-                        <div class="col-md-6">
-                            <img src="/assets/undraw_mains.png" class="d-block mx-lg-auto img-fluid" alt="Mains image"
-                                loading="lazy">
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="display-5 fw-bold lh-1 mb-3">Mains</h1>
-                            <p class="lead">Feeling hungry like a bear or just need some proper food, this will
-                                get you started.</p>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <a href="/meals/category/mains?page=1&limit=5"
-                                    class="btn btn-warning btn-lg px-4 me-md-2">Browse Mains Category</a>
+                <!-- features list -->
+                <div class="container ">
+                    <div class="row g-4 py-5 px-5 row-cols-1 row-cols-lg-3">
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
                             </div>
+                            <div>
+                                <h4>Organise meals</h4>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+
+                                <h4>Get suggestions</h4>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+                                <h4>Personal Ratings</h4>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+
+                                <h4>Ingredients pilot</h4>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div
+                                class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                                <img src="/assets/tick-self-made36x36.svg" alt="">
+                            </div>
+                            <div>
+                                <h4>Meal planner</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-6">
+                                <div class="input-group flex-nowrap">
+                                    <input type="text" class="form-control" placeholder="Email address to sign up"
+                                        aria-label="Email address to create account">
+                                    <button class="btn btn-warning" type="button">Sign up</button>
+                                </div>
+                            </div>
+                            <p class="small p-2"> <a href="http://">Sign in</a>
+                                if you already have an account</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+            <!-- <img class="wave-bottom" src="/assets/wave-white1.svg"> -->
+            <div class="custom-shape-divider-bottom-1654006030">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
 
-            <!-- BREAKFAST, reversed-->
-            <section class="section-template section-template-opaque section-home-breakfast">
-                <div class="container col-xxl-8 px-4 py-5">
-                    <div class="row align-items-center g-5 py-5">
-                        <div class="col-md-6">
-                            <img src="/assets/undraw_breakfast.png" class="d-block mx-lg-auto img-fluid"
-                                alt="Breakfast image" loading="lazy">
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="display-5 fw-bold lh-1 mb-3">Breakfast</h1>
-                            <p class="lead">Lazy Sunday morning brunch or just quick out the door, get started
-                                here.</p>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <a href="/meals/category/breakfast?page=1&limit=5"
-                                    class="btn btn-warning btn-lg px-4 me-md-2">Browse Breakfast Category</button></a>
-                            </div>
+        <!-- MAINS -->
+        <section class="section-template section-template-opaque section-home-mains">
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
+                    <div class="col-md-6">
+                        <img src="/assets/undraw_mains.png" class="d-block mx-lg-auto img-fluid" alt="Mains image"
+                            loading="lazy">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">Mains</h1>
+                        <p class="lead">Feeling hungry like a bear or just need some proper food, this will
+                            get you started.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="/meals/category/mains?page=1&limit=5"
+                                class="btn btn-warning btn-lg px-4 me-md-2">Browse Mains Category</a>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- SNACKS -->
-            <section class="section-template section-template-opaque section-home-snacks">
-                <div class="container col-xxl-8 px-4 py-5">
-                    <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
-                        <div class="col-md-6">
-                            <img src="/assets/undraw_snack.png" class="d-block mx-lg-auto img-fluid" alt="Snacks image"
-                                loading="lazy">
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="display-5 fw-bold lh-1 mb-3">Snacks</h1>
-                            <p class="lead">Oh oh.. sure you want to click here? Delicious unresistable bites and
-                                bits here.</p>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <a href="/meals/category/snacks?page=1&limit=5"
-                                    class="btn btn-warning btn-lg px-4 me-md-2">Browse Snacks Category</button></a>
-                            </div>
+            </div>
+        </section>
+        <!-- BREAKFAST, reversed-->
+        <section class="section-template section-template-opaque section-home-breakfast">
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row align-items-center g-5 py-5">
+                    <div class="col-md-6">
+                        <img src="/assets/undraw_breakfast.png" class="d-block mx-lg-auto img-fluid"
+                            alt="Breakfast image" loading="lazy">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">Breakfast</h1>
+                        <p class="lead">Lazy Sunday morning brunch or just quick out the door, get started
+                            here.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="/meals/category/breakfast?page=1&limit=5"
+                                class="btn btn-warning btn-lg px-4 me-md-2">Browse Breakfast Category</button></a>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- SUGGESTION, reversed-->
-            <section class="section-template section-template-opaque section-home-suggestion">
-                <div class="container col-xxl-8 px-4 py-5">
-                    <div class="row align-items-center g-5 py-5">
-                        <div class="col-md-6">
-                            <img src="/assets/undraw_suggestion.png" class="d-block mx-lg-auto img-fluid"
-                                alt="Suggestion image" loading="lazy">
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="display-5 fw-bold lh-1 mb-3">Suggestion</h1>
-                            <p class="lead">Dont know what to cook? Get a suggestion here from past meals.</p>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <a href="/meals/suggestion" class="btn btn-warning btn-lg px-4 me-md-2">Get A
-                                    Suggestion</button></a>
-                            </div>
+        <!-- SNACKS -->
+        <section class="section-template section-template-opaque section-home-snacks">
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
+                    <div class="col-md-6">
+                        <img src="/assets/undraw_snack.png" class="d-block mx-lg-auto img-fluid" alt="Snacks image"
+                            loading="lazy">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">Snacks</h1>
+                        <p class="lead">Oh oh.. sure you want to click here? Delicious unresistable bites and
+                            bits here.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="/meals/category/snacks?page=1&limit=5"
+                                class="btn btn-warning btn-lg px-4 me-md-2">Browse Snacks Category</button></a>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- ADD NEW MEAL -->
-            <section class="section-template section-template-opaque section-home-addmeal">
-                <div class="container col-xxl-8 px-4 py-5">
-                    <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
-                        <div class="col-md-6">
-                            <img src="/assets/addNewMeal.png" class="d-block mx-lg-auto img-fluid"
-                                alt="Add new meal image" loading="lazy">
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="display-5 fw-bold lh-1 mb-3">Add new meal</h1>
-                            <p class="lead">Found a meal you like, click here to add to the collection in two easy
-                                steps.</p>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <a href="/meals/newMealPage" class="btn btn-warning btn-lg px-4 me-md-2">Add New
-                                    Meal</button></a>
-                            </div>
+        <!-- SUGGESTION, reversed-->
+        <section class="section-template section-template-opaque section-home-suggestion">
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row align-items-center g-5 py-5">
+                    <div class="col-md-6">
+                        <img src="/assets/undraw_suggestion.png" class="d-block mx-lg-auto img-fluid"
+                            alt="Suggestion image" loading="lazy">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">Suggestion</h1>
+                        <p class="lead">Dont know what to cook? Get a suggestion here from past meals.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="/meals/suggestion" class="btn btn-warning btn-lg px-4 me-md-2">Get A
+                                Suggestion</button></a>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- ABOUT THIS APP, reversed -->
-            <section class="section-template section-template-opaque section-home-aboutapp">
-                <div class="container col-xxl-8 px-4 py-5">
-                    <div class="row align-items-center justify-content-center g-5 py-5">
-                        <div class="col-md-6">
-                            <img src="/assets/undraw_aboutapp.png" class="d-block mx-lg-auto img-fluid"
-                                alt="About app image" loading="lazy">
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="display-5 fw-bold lh-1 mb-3">About This App</h1>
-                            <p class="lead">Want to know how this app works and the motivation behind it?.</p>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <button type="button" class="btn btn-warning btn-lg px-4 me-md-2">Give me the technical
-                                    details</button>
-                            </div>
+        <!-- ADD NEW MEAL -->
+        <section class="section-template section-template-opaque section-home-addmeal">
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row flex-md-row-reverse align-items-center justify-content-center g-5 py-5">
+                    <div class="col-md-6">
+                        <img src="/assets/addNewMeal.png" class="d-block mx-lg-auto img-fluid" alt="Add new meal image"
+                            loading="lazy">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">Add new meal</h1>
+                        <p class="lead">Found a meal you like, click here to add to the collection in two easy
+                            steps.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="/meals/newMealPage" class="btn btn-warning btn-lg px-4 me-md-2">Add New
+                                Meal</button></a>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- FOOTER -->
-            <%- include('partials/footer') %>
+        <!-- ABOUT THIS APP, reversed -->
+        <section class="section-template section-template-opaque section-home-aboutapp">
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row align-items-center justify-content-center g-5 py-5">
+                    <div class="col-md-6">
+                        <img src="/assets/undraw_aboutapp.png" class="d-block mx-lg-auto img-fluid"
+                            alt="About app image" loading="lazy">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">About This App</h1>
+                        <p class="lead">Want to know how this app works and the motivation behind it?.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <button type="button" class="btn btn-warning btn-lg px-4 me-md-2">Give me the technical
+                                details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- SCRIPTS -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-                    crossorigin="anonymous"></script>
-                <script src="/scripts/nav-slideUpDown.js"></script>
-                <script src="/scripts/nav-toggler.js"></script>
-                <script src="/scripts/nav-activePage.js"></script>
+        <!-- FOOTER -->
+        <%- include('partials/footer') %>
+
+            <!-- SCRIPTS -->
+            <%- include('partials/scripts') %>
 
 
 </body>

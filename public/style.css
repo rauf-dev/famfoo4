@@ -1,71 +1,76 @@
 
+:root{
+  /* background colors */
+  --sanabgblack:#273036;
+  --sanabgyellow: #F6DC42;
+  --sanabgwhite:white;
+
+  /* font colors */
+  --sanafontblack:#273036;
+  --sanafontyellow: #F6DC42;
+  --sanafontwhite:white;
+
+  /* buttons */
+  --sanabtnborderyellow:#f6dc42;
+}
+
 body {
-  min-height: 100vh;
-  background-color: #F6DC42;
+  /* min-height: 100vh; */
+  background-color: var(--sanabgyellow);
   margin: 0;
   padding: 0;
 }
 
 .hero-logo{
-  min-height: 86vh;
-  position: relative;
+  min-height: 100vh;
 }
 
 .arrow-down{
   position: absolute;
-  bottom: 100px;
-  transform: translateX(-50%)
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  transition: all 0.5s;
 }
-@media (min-width: 800px) {
+ @media (min-width: 768px) {
   .arrow-down{
-    bottom: 150px;
+    transform: translate(-50%, -80%);
+    transition: all 0.5s;
   }
-}
-@media (min-width: 1200px) {
-  .arrow-down{
-    bottom: 200px;
-  }
-}
-@media (min-width: 1560px) {
-  .arrow-down{
-    bottom: 240px;
-  }
-}
+} 
 .wave-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 102%;
 }
 .hero-features{
   position: relative;
-  min-height: 86vh;
-  background-color: #273036;
-  color: white;
+  min-height: 100vh;
+  background-color: var(--sanabgblack);
+  color: var(--sanafontwhite);
 }
 .yellow-text{
-  color: #F6DC42;
+  color: var(--sanafontyellow);
 }
 .btn-warning{
-  background-color: #F6DC42;
-  border-color: #F6DC42;
+  background-color: var(--sanabgyellow);
+  border-color: var(--sanabtnborderyellow);
 }
 
-footer{
-  min-height: 10vh;
-}
 
 /* Used on: home page */
 .section-template-opaque{
-  background-color: white;
+  background-color: var(--sanabgwhite);
   /* opacity: 0.9; */
 }
 
 /* Used on: AddNewMeal, MealDetails and Suggestion pages */
 .section-template__fullHeightSection{
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  min-height: 75vh;
+  background: #273036;
+  color: var(--sanafontwhite);
+  min-height: 100vh;
   position: relative;
   margin: 0 auto;
 }
@@ -73,6 +78,9 @@ footer{
 /* Used on: AddNewMeal, MealDetails and Suggestion pages */
 .section-template__fullHeightSection__oneButton{
   width: 100%;
+}
+.template-single-col{
+  max-width: 500px;
 }
 
 /* Used on: GetSuggestion and MealDetails pages */
@@ -94,19 +102,96 @@ footer{
 .form-text {
   margin-top: 0;
 }
-.form-label {
-  margin-bottom: 0;
-}
+
 .addNewMealImage-demo {
   height: 350px;
   object-fit: cover;
 }
 
-/* EDIT MEAL PAGE */
-.section-editmeal-hiddenform{
-  /* display: none; */
-}
+
 
 .section-editmeal .section-template__fullHeightSection__oneButton{
 position: relative;
+}
+.custom-shape-divider-bottom-1654005556 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1654005556 svg {
+  position: relative;
+  display: block;
+  width: calc(240% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-bottom-1654005556 .shape-fill {
+  fill: #273036;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1654005556 svg {
+      width: calc(116% + 1.3px);
+      height: 112px;
+  }
+}
+.custom-shape-divider-bottom-1654006030 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1654006030 svg {
+  position: relative;
+  display: block;
+  width: calc(240% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-bottom-1654006030 .shape-fill {
+  fill: var(--sanabgwhite);
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1654006030 svg {
+      width: calc(116% + 1.3px);
+      height: 112px;
+  }
+}
+
+.footer{
+  min-height: 50px;
+  max-width: 1440px;
+  color:var(--sanafontwhite);
+
+}
+.meal-details-page{
+  background-color: var(--sanabgblack);
+  color: var(--sanafontwhite);
+  min-height: 100vh;
+}
+
+.bg-sanadark{
+  background-color: var(--sanabgblack);
+}
+.gallery-container{
+  max-width: 1440px;
+}
+.danger-zone{
+  /* background-color: var(--sanabgblack); */
+    border-color: #454f59;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
 }
