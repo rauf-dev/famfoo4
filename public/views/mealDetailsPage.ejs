@@ -13,7 +13,7 @@
                     <nav class="small mt-2" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">home</a></li>
-                            <li class="breadcrumb-item"><a href="/meals/category/<%= meal.mealCategory %>">
+                            <li class="breadcrumb-item"><a href="/meals/category/<%= meal.mealCategory %>?page=1&limit=5">
                                     <%= meal.mealCategory %>
                                 </a></li>
                             <li class="breadcrumb-item active" aria-current="page">meal details</li>
@@ -24,12 +24,13 @@
                 <!-- MEAL DETAILS LAYOUT -->
                 <div class="container col-xxl-8 px-4 py-2 meal-details-page">
                     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                        <div class="col-10 col-sm-8 col-lg-6">
+                        <!-- <div class="col-12 col-sm-6 col-lg-8"> -->
+                        <div class="col-10 col-sm-6 col-lg-6">
                             <img src="<%= `${meal.imageLocation}` %>" class="d-block mx-lg-auto img-fluid rounded"
                                 alt="Bootstrap Themes" loading="lazy" width="700" height="500">
                         </div>
                         <div class="col-lg-6">
-                            <h1 class="display-5 fw-bold lh-1 mb-3">
+                            <h1 class="display-5 fw-bold lh-1 mb-3 text-capitalize">
                                 <%= meal.mealName %>
                             </h1>
                             <p class="lead">
