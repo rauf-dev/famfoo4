@@ -36,6 +36,6 @@ const MealSchema = mongoose.Schema({
     },
   });
 
-  // INFO: Collection name will be pluralized by wise ass mongo (for downward compactibility?)
+  // INFO: Collection name will be pluralized by mongo (for downward compactibility?)
 // INFO: So it will be renamed from col-famfoo4 to col-famfoo4s
   module.exports = mongoose.model('famfoomeals',MealSchema);

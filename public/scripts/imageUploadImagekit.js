@@ -9,8 +9,9 @@ fileField.addEventListener('change', upload);
 const imagekit = new ImageKit({
   publicKey: 'public_sByx+wwcY0EsO9JcZ/zGoCx3vts=',
   urlEndpoint: 'https://ik.imagekit.io/ptrqyxh4ajrm',
-  authenticationEndpoint: "http://localhost:3005/auth"
-  // authenticationEndpoint: 'https://mealorg.herokuapp.com/auth',
+  authenticationEndpoint: `${window.location.protocol}//${window.location.host}/auth`
+  // DEV is: authenticationEndpoint: "http://localhost:3005/auth",
+  // PROD is: authenticationEndpoint: 'https://sanameals.com/auth',
 });
 
 function upload(e) {
