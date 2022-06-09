@@ -21,8 +21,8 @@
             </div>
             <%- messages('messages', locals) %>
                 <!-- GALLERY OF MEALS IN SPECIFIC MEAL CATEGORY -->
-                <div class="px-4 gallery-container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4">
+                <div class="container px-4 gallery-container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4 mb-4">
                         <% for( let index=0; index < meals.results.length; index++ ) { %>
                             <div class="col">
                                 <div class="card">
@@ -43,6 +43,8 @@
                                         <p class="small text-muted">
                                             <%= meals.results[index].mealCategory %>
                                         </p>
+
+
                                     </div>
                                 </div>
                             </div>
