@@ -173,13 +173,13 @@ position: relative;
 .footer{
   min-height: 50px;
   max-width: 1440px;
-  color:var(--sanafontwhite);
+  /* color:var(--sanafontwhite); */
 
 }
 .meal-details-page{
   background-color: var(--sanabgblack);
   color: var(--sanafontwhite);
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .bg-sanadark{
@@ -194,4 +194,14 @@ position: relative;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
+}
+.category-page-container{
+  min-height: 95vh;
+}
+
+.coming-soon {
+  font-size: x-small;
+}
+.hero-logo-section{
+  position: relative;
 }
